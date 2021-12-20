@@ -1,0 +1,122 @@
+//
+// Pages beckertv
+//
+.path-becker-tv {
+    overflow-x: hidden;
+    .bg-banner-beckertv {
+        height: 78vh;
+    }
+    .component-slider-video {
+        iframe {
+            width: 100%;
+            height: 350px;
+        }
+    }
+    .component-streaming {
+        iframe {
+            width: 100%;
+            height: 600px;
+        }
+    }
+    .component-banner-link {
+        /*h2 {
+      text-shadow: 1px 1px 5px #666565;
+    }*/
+    }
+    .component-form-register {
+        background: rgb(255, 255, 255);
+        /* Old browsers */
+        background: -moz-linear-gradient( top, rgb(213 213 220) 68%, rgb(213 213 220) 69%, rgba(58, 59, 130, 1) 69%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient( top, rgb(213, 213, 220, 1) 68%, rgb(213, 213, 220, 1) 69%, rgba(58, 59, 130, 1) 69%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient( to bottom, rgb(213, 213, 220, 1) 68%, rgb(213, 213, 220, 1) 69%, rgba(58, 59, 130, 1) 69%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#3a3b82', GradientType=0);
+        /* IE6-9 */
+    }
+    .bg-banner-link {
+        height: 85vh;
+    }
+    @media (min-width: 1920px) {
+        .box-banner-link {
+            width: 24%;
+        }
+    }
+    @media (min-width: 1748px) {
+        .box-banner-link {
+            width: 28%;
+        }
+    }
+    @media (min-width: 1536px) {
+        .content-footer {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+    @media (max-width: 1440px) {
+        .content__banner_tv {
+            width: 57% !important;
+        }
+        .beckertv_img {
+            width: 50% !important;
+        }
+    }
+    @media (max-width: 1366px) {
+        .beckertv_img {
+            width: 50%;
+            right: 3rem !important;
+        }
+        .banner-link-img {
+            width: 18%;
+        }
+    }
+    @media (max-width: 1280px) {
+        .content__banner_tv {
+            width: 58% !important;
+        }
+        .component-slider-video {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+        .component-streaming {
+            iframe {
+                height: 600px;
+            }
+        }
+    }
+    @media (max-width: 640px) {
+        .bg-banner-beckertv {
+            height: 80vh;
+        }
+        .content__banner_tv {
+            width: 80%!important;
+        }
+        .component-slider-video {
+            padding-left: 0rem;
+            padding-right: 0rem;
+            iframe {
+                height: 210px;
+            }
+        }
+        .component-streaming {
+            iframe {
+                height: 300px;
+            }
+        }
+    }
+    @media (max-width: 375px) {
+        .content__banner_tv {
+            padding-left: 1.2rem !important;
+            h2 {
+                font-size: 2.5rem;
+            }
+            p {
+                line-height: 1;
+            }
+        }
+        .beckertv_img-sm {
+            bottom: -1rem;
+        }
+    }
+}

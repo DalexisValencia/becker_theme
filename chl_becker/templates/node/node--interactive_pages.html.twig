@@ -1,0 +1,12 @@
+<section{{ attributes }}>
+  <div{{ content_attributes }} class="d-block w-100">
+    {% for block_content in content.field_block_data['#object'].field_block_data %}
+      {% set uuid = block_content.entity.uuid[0].value %}
+      <section class="clear">
+      {{ drupal_block('block_content:' ~ uuid) }}
+      </section>
+    {% endfor %}
+{#    {{ drupal_block('simplenews-subscriptions-block-15aa1201-39fc-461b-94de-d9b2cd831eb2') }}#}
+
+  </div>
+</section>

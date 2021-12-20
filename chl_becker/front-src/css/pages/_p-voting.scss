@@ -1,0 +1,223 @@
+.component-banner-challenges {
+    position: relative;
+    picture {
+        &,
+        img {
+            width: 100%;
+        }
+    }
+    .component-banner-challenges--header {
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+        .component-banner-challenges--header-title {
+            color: var(--color-white);
+            font: {
+                family: var(--font-family-primary);
+                size: 58px;
+                weight: 700;
+            }
+        }
+        .component-banner-challenges--header-description {
+            color: var(--color-white);
+            font: {
+                family: var(--font-family-primary);
+                size: 16px;
+                weight: 400;
+            }
+        }
+        .i-want-vote {
+            width: 100%;
+            max-width: 240px;
+            text-transform: uppercase;
+            font: {
+                family: var(--font-family-primary);
+                size: 16px;
+                weight: 700;
+            }
+        }
+    }
+}
+
+.component-counter {
+    background-color: var(--color-primary);
+    .component-counter--header {
+        max-width: 700px;
+        width: 100%;
+        margin: 0px auto;
+        .component-counter--title {
+            color: var(--color-white);
+            font: {
+                family: var(--font-family-primary);
+                size: 48px;
+                weight: 700;
+            }
+        }
+        .component-counter--subtitle {
+            color: var(--color-white);
+            font: {
+                family: var(--font-family-primary);
+                size: 20px;
+                weight: 700;
+            }
+        }
+        .component-counter--wrapper {
+            .component-counter--item {
+                color: var(--color-white);
+                .component-counter--label {
+                    display: block;
+                    text-transform: uppercase;
+                    font: {
+                        family: var(--font-family-digital);
+                        size: 10px;
+                        weight: 400;
+                    }
+                }
+                .component-counter--counting {
+                    font: {
+                        family: var(--font-family-digital);
+                        size: 41px;
+                        weight: 400;
+                    }
+                }
+            }
+        }
+        .component-counter--copy {
+            color: var(--color-white);
+            font: {
+                size: 13px;
+                family: var(--font-family-primary);
+            }
+        }
+    }
+}
+
+.component-counter--steps {
+    .step {
+        &:first-child {
+            border-right: 1.5px solid var(--color-white);
+        }
+        .step-id {
+            color: var(--color-white);
+            font: {
+                size: 25px;
+                family: var(--font-family-primary);
+                weight: 700;
+            }
+        }
+        span:not(.step-id) {
+            font: {
+                size: 13px;
+                family: var(--font-family-primary);
+                weight: 100;
+                line-height: 1;
+            }
+        }
+        a {
+            height: 33px;
+            font: {
+                size: 15px;
+                family: var(--font-family-primary);
+                weight: 500;
+            }
+            &.outline {
+                border: 1px solid var(--color-fourth);
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.component-top-ten-posters {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0px auto;
+    .component-top-ten-posters--header {
+        .component-top-ten-posters--header-title {
+            color: var(--color-fourth);
+            font: {
+                size: 23px;
+                family: var(--font-family-primary);
+                weight: 500;
+            }
+        }
+    }
+    .component-top-ten-posters--wrapper-posts {
+        .component-top-ten-posters--post {
+            width: 100%;
+            max-width: fit-content;
+            position: relative;
+            .post-media {
+                position: relative;
+                .post-play {
+                    position: absolute;
+                    cursor: pointer;
+                }
+            }
+            .post-details {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                background: rgb(62, 29, 121);
+                background: linear-gradient(180deg, rgba(62, 29, 121, 0.14607849975927867) 16%, rgba(62, 29, 121, 1) 100%);
+                .post-details--user {
+                    font: {
+                        family: var(--font-family-primary);
+                        size: 15px;
+                        weight: 100;
+                    }
+                }
+                .post-details--statistics {
+                    .views,
+                    .time-ago {
+                        font: {
+                            family: var(--font-family-fourth);
+                            size: 12px;
+                            weight: 100;
+                        }
+                    }
+                    border-bottom: 1px solid var(--color-white);
+                }
+                .post-description {
+                    .post-description--title {
+                        font: {
+                            family: var(--font-family-primary);
+                            size: 16px;
+                            weight: 400;
+                        }
+                    }
+                    .post-description--hashtag {
+                        font: {
+                            family: var(--font-family-primary);
+                            size: 12px;
+                            weight: 100;
+                        }
+                    }
+                }
+            }
+            .post-let-vote {
+                position: absolute;
+                margin-top: 15px;
+                width: 100%;
+                a {
+                    width: 100%;
+                    display: block;
+                    text-transform: uppercase;
+                    font: {
+                        size: 16px;
+                        family: var(--font-family-primary);
+                        weight: 500;
+                    }
+                }
+                span {
+                    width: 100%;
+                    display: block;
+                    color: var(--color-fourth);
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

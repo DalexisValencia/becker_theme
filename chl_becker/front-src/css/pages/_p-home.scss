@@ -1,0 +1,268 @@
+//
+// Pages Home
+//
+.title {
+    font-size: 0 !important;
+}
+
+body {
+    background-color: var(--color-primary);
+    margin: 0 auto;
+}
+
+.path-frontpage {
+    overflow-x: hidden;
+}
+
+.component-banner-principal,
+.component-banner-novelties {
+    padding-left: 150px;
+}
+
+.c-animation {
+    right: 11rem;
+    bottom: -3rem;
+}
+
+.component-form-register {
+    background: rgb(255, 255, 255);
+    /* Old browsers */
+    background: -moz-linear-gradient( top, rgba(255, 255, 255, 1) 68%, rgba(255, 255, 255, 1) 69%, rgba(58, 59, 130, 1) 69%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient( top, rgba(255, 255, 255, 1) 68%, rgba(255, 255, 255, 1) 69%, rgba(58, 59, 130, 1) 69%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 1) 68%, rgba(255, 255, 255, 1) 69%, rgba(58, 59, 130, 1) 69%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#3a3b82', GradientType=0);
+    /* IE6-9 */
+    h2 {
+        margin-top: -8rem;
+        line-height: 2.8rem;
+        color: var(--color-primary);
+        font-size: 2.8rem;
+    }
+    fieldset#edit-title {
+        position: absolute;
+        left: -6rem;
+        h2 {
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 95%;
+            letter-spacing: -0.03em;
+        }
+        p {
+            color: var(--color-primary);
+            margin-top: 1.5rem;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 95%;
+            letter-spacing: -0.03em;
+        }
+    }
+    @media (min-width: 768px) {
+        fieldset#edit-title {
+            h2 {
+                font-size: 50px;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+    @media (min-width: 1600px) {
+        fieldset#edit-title {
+            h2 {
+                font-size: 100px;
+            }
+            p {
+                font-size: 30px;
+            }
+        }
+    }
+    .js-form-item {
+        padding-top: 6px;
+        color: white;
+        font-size: 19px;
+         ::-webkit-input-placeholder {
+            /* Edge */
+            color: white;
+        }
+         :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: white;
+        }
+         ::placeholder {
+            color: white;
+        }
+        .checkbox {
+            font-size: 12px !important;
+            text-transform: uppercase;
+        }
+        div#edit-birthdate {
+            display: flex;
+            margin: 0 0 1rem 0;
+        }
+        select {
+            color: #ffffff;
+            background: var(--color-secondary);
+            border-bottom: 1px solid;
+            width: 68%;
+            display: flex;
+            border-radius: 0;
+        }
+    }
+}
+
+.component-terms-and-conditions {
+    p {
+        padding: 0.6rem 0;
+        font-size: 10px;
+    }
+    span {
+        font-size: 14px;
+    }
+    @media (max-width: 640px) {
+        span {
+            font-size: 10px;
+        }
+    }
+}
+
+.bg-terms_and_conditions {
+    height: 400px;
+    @media (max-width: 640px) {
+        height: 274px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .content__banner_principal {
+        width: 54% !important;
+    }
+    .content_slider_novelties {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 1440px) {
+    .content__banner_principal {
+        width: 54% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .component-banner-principal,
+    .component-banner-novelties,
+    .component-slider-banner-products {
+        padding-left: 0px;
+    }
+    .c-animation {
+        right: 2rem;
+        bottom: -3rem;
+    }
+    fieldset#edit-title {
+        left: 0rem !important;
+    }
+}
+
+#hero-video {
+    display: none;
+}
+
+.component-video {
+    svg {
+        transition: 1s;
+        -moz-transition: 1s;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
+        cursor: pointer;
+        &:hover {
+            transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}
+
+.component-video {
+    img {
+        height: 900px;
+    }
+    @media (max-width: 768px) {
+        img {
+            height: auto;
+        }
+        svg {
+            width: 40px;
+        }
+        h3 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 0.6rem;
+        }
+        div#hero-video {
+            height: 52vh;
+        }
+        iframe#ytplayer {
+            height: 100%;
+        }
+    }
+}
+
+.error-page-not-found {
+    background-image: image('bg-404.jpg');
+    @media (max-width: 640px) {
+        background-image: image('404-mobile-becker.jpg');
+    }
+}
+
+@media (max-width: 640px) {
+    .content__banner_principal {
+        width: 65% !important;
+    }
+    .content_slider_novelties {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .px-10 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .component-banner-spotify h2 {
+        font-size: 3rem;
+    }
+    .component-form-register h2 {
+        font-size: 2.5rem;
+    }
+    .component-banner-principal {
+        .slider_banner_principal {
+            h2 {
+                font-size: calc(1.9rem + .73529vw - 2.35294px)!important;
+                line-height: 1.6rem !important;
+            }
+        }
+    }
+    .content_slider_novelties {
+        h3 {
+            font-size: calc(1.9rem + .73529vw - 2.35294px)!important;
+            line-height: 1.6rem !important;
+        }
+    }
+}
+
+form[data-drupal-selector=webform-submission-form-register-add-form] .form-item-terms-and-conditions {
+    pointer-events: none;
+}
+
+form[data-drupal-selector=webform-submission-form-register-add-form] .form-item-terms-and-conditions input {
+    pointer-events: auto;
+}
+
+form[data-drupal-selector=webform-submission-form-register-add-form] .form-item-terms-and-conditions label {
+    pointer-events: auto;
+}

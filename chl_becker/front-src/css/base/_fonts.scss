@@ -1,0 +1,12 @@
+//
+// Fonts
+//
+
+@include font-face(var(--font-icomoon), 'icomoon');
+@include font-face(var(--font-family-primary), 'Inter-Medium');
+@include font-face(var(--font-family-secondary), 'NeueMontreal-Medium');
+@include font-face(var(--font-family-third), 'Inter-Regular');
+@include font-face(var(--font-family-fourth), "Poppins-Black", 900);
+@include font-face(var(--font-family-fourth), "Poppins-Medium", 700);
+@include font-face(var(--font-family-fourth), "Poppins-Regular", 300);
+@include font-face(var(--font-family-digital), "DJB-Get-Digital");

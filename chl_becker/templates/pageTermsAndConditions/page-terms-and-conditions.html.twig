@@ -1,0 +1,21 @@
+{# COMPONENTE TERMINOS Y CONDICIONES #}
+<div class="bg-terms_and_conditions lg:w-3/4 w-4/6 absolute right-0 bg-fourth"></div>
+<section class="component-terms-and-conditions text-white container mx-auto pt-28 lg:pl-32 pl-10 pr-10 pb-24 relative">
+  {% for item in terms_and_conditions %}
+   <span>  {{  item.subtitle_tyc }} </span> 
+    <h2 class="leading-none my-4 lg:text-6xl lg:w-1/2 text-4xl"> {{  item.title_tyc }}</h2>
+    <div class="content-terms_and_conditions">{{  item.description_tyc|raw }}</div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+
+{# COMPONENTE FORMULARIO #}
+<section class="component-form-register lg:pt-24 lg:px-0 pt-16">
+  <div class="bg-secondary container lg:pb-16 lg:pt-24 lg:px-16 mx-auto pb-28 pt-24 px-6">
+  {{ drupal_entity('webform', 'form_register') }}
+ </div>
+</section>
+{# FIN #}
+
+

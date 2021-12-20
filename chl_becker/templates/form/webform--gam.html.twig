@@ -1,0 +1,93 @@
+<main class="abi--main-wrapper">
+    <aside class="abi--brand-wrapper-form--lateral-tessellation">
+        <img src="/{{ directory }}/dist/form-gamer/assets/LLAxBECKER-logo.svg" alt="" class="llaxbecker-logo">
+    </aside>
+    <section class="abi--brand-wrapper-form">
+        <header class="abi--brand-wrapper-form--header">
+            <h1 class="abi--brand-wrapper-form--header-title">
+                ¿Crees en la buena suerte? Gana 5 cofres de LoL
+            </h1>
+            <p class="abi--brand-wrapper-form--header-subtitle">
+                No somos todos, pero somos más los que nunca hemos ganado un concurso. Pero ahora sí que tienes una posibilidad real de ganar, porque vamos a entregar 1.000 premios. ¡Sí, mil! Regístrate y participa por 5 cofres de LoL con sus llaves. ¡Gg!
+                <!-- <span class="breakword">Sorteo: 29 de agosto</span> -->
+            </p>
+        </header>
+        <form class="el-custom-abi-register-form" {{ attributes }}>
+            {{ title_prefix }}
+            <div class="block-form-group">
+                {{ element.elements.nombre }}
+                {% if element.elements.nombre['#errors']|length %}
+                    <label class="error">
+                        {{element.elements.nombre['#errors']}}
+                    </label>
+                {% endif %}
+            </div>
+
+            <div class="block-form-group">
+                {{ element.elements.apellido }}
+                 {% if element.elements.apellido['#errors']|length %}
+                    <label class="error">
+                        {{element.elements.apellido['#errors']}}
+                    </label>
+                {% endif %}
+            </div>
+            <div class="block-form-group">
+                {{ element.elements.correo_electronico }}
+                
+                {% if element.elements.correo_electronico['#errors']|length %}
+                    <label class="error">
+                        {{element.elements.correo_electronico['#errors']}}
+                    </label>
+                {% endif %}
+                
+            </div>
+            <div class="block-form-group">                
+                {{ element.elements.fecha_de_nacimiento }}
+                {% if element.elements.fecha_de_nacimiento['#errors']|length %}
+                    <label class="error">
+                        {{element.elements.fecha_de_nacimiento['#errors']}}
+                    </label>
+                {% endif %}
+            </div>
+            <div class="block-form-group">
+
+                {{ element.elements.prefiere_tomar }}
+                {% if element.elements.prefiere_tomar['#errors']|length %}
+                   <label class="error">
+                       {{element.elements.prefiere_tomar['#errors']}}
+                   </label>
+               {% endif %}
+            </div>
+            <div class="simple-questionary">
+                {{ element.elements.gustaria_diera_becker }}
+                {% if element.elements.gustaria_diera_becker['#errors']|length %}
+                   <label class="error">
+                       {{element.elements.gustaria_diera_becker['#errors']}}
+                   </label>
+               {% endif %}
+            </div>
+            <div class="el-custom--block-terms">
+                <div class="block-term">
+                    {{ element.elements.tyc }}
+                     {% if element.elements.tyc['#errors']|length %}
+                        <label class="error">
+                            {{element.elements.tyc['#errors']}}
+                        </label>
+                    {% endif %}
+                </div>
+                <div class="block-term">
+                    {{ element.elements.mkt }}
+                </div>
+            </div>
+            <div class="form-actions js-form-wrapper form-group" id="edit-actions">
+                {{ element.elements.actions }}
+            </div>
+            {{ element.form_token }}
+            {{ element.form_build_id }}
+            {{ element.form_id }}
+            {{class}}
+            {{ title_suffix }}
+
+        </form>
+    </section>
+</main>

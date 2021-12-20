@@ -1,0 +1,20 @@
+<ul class="flex justify-end">
+  {% for item in menu_social_links %}
+  {% if item['title'] == "Facebook" %}
+  <li class="icon-facebook">
+    {% elseif item['title'] == "Youtube" %}
+  <li class="icon-youtube">
+    {% elseif item['title'] == "Instagram" %}
+  <li class="icon-instagram">
+    {% elseif item['title'] == "Twitter" %}
+  <li class="icon-twitter">
+    {% else %}
+  <li class="icon-facebook">
+    {% endif %}
+    <a href="{{ item['url'] }}">
+      {{ item['title'] }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+

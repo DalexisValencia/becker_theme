@@ -1,0 +1,80 @@
+//
+// Variables
+//
+
+// Modular scale
+$modularscale: (
+  base: 18px,
+  ratio: $minor-third,
+  map-get($grid-breakpoints, 'md'): (
+    base: 18px,
+  ),
+  map-get($grid-breakpoints, 'xxl'): (
+    base: 24px,
+  ),
+);
+
+// Custom scale
+$custom-scale: (
+  '6xl': (
+    scale: 7,
+  ),
+  '5xl': (
+    scale: 6,
+  ),
+  '4xl': (
+    scale: 5,
+  ),
+  '3xl': (
+    scale: 4,
+  ),
+  '2xl': (
+    scale: 3,
+  ),
+  xl: (
+    scale: 2,
+  ),
+  lg: (
+    scale: 1,
+  ),
+  base: (
+    scale: 0,
+    line-height: $line-height-base,
+    font-weight: $font-weight-base,
+  ),
+  sm: (
+    scale: -1,
+  ),
+  xs: (
+    scale: -2,
+  ),
+);
+
+// Paths
+$asset-base-path: '..';
+
+:root {
+  // fontFamily
+  --font-family-primary: Inter-Medium;
+  --font-family-secondary: NeueMontreal-Medium;
+  --font-family-third: Inter-Regular;
+  --font-icomoon: Icomoon;
+  --font-family-fourth: Poppins;
+  --font-family-digital: DJB-Get-Digital;
+  // fontSize
+  @include set-text($custom-scale);
+  // colors
+  --color-black: #{$black};
+  --color-white: #{$white};
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --color-third: #{$third};
+  --color-fourth: #{$fourth};
+  --color-fifth: #{$fifth};
+  --color-sixth: #{$sixth};
+  --color-seventh: #{$seventh};
+
+  // create palette from 50 to 900
+  @include palette('primary', $primary);
+  @include palette('secondary', $secondary);
+}

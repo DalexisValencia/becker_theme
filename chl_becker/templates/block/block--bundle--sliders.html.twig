@@ -1,0 +1,169 @@
+{{ attach_library("cenas_virtuales/slick") }}
+{# slider hablemos de malta #}
+{% if content['#block_content'].field_type_slider.value == 'hablemos_malta' %}
+
+  {# slider item #}
+
+    <section class="slider-content01 cl-mb-0  pt-6  md:pt-0">
+    {# {% for item in content.field_content_slider %} #}
+    {% for item in content['#block_content'].field_content_slider %}
+      {% if item.entity %}
+        {% set color_text = item.entity.field_text_color.value[0]['color'] %}
+        {% set filling = item.entity.field_filling.value %}
+        <div class="content-01 cl-bg-black cl-pt-0 cl-bg-cover" style="background-image:url('{{ file_url(item.entity.field_background.entity.uri.value) }}')">
+          <div class="cl-mx-auto">
+
+            <div class="cl-mx-w-lg cl-flex cl-flex-col-reverse lg:cl-flex-row">
+
+              {# col 1 #}
+              <div class="slider-info cl-w-5/6 cl-mx-auto lg:cl-w-4/12 cl-flex cl-items-center lg:cl-mr-8 justify-center lg:cl-justify-end">
+                <div class="cl-px-4 cl-text-center lg:cl-text-left cl-mt-8 cl-pb-16 md:cl-pb-0 md:cl-mt-0 md:cl-ml-32" style="color: {{ color_text }}">
+                  <h3 class="cl-font-secundary cl-mt-8 lg:cl-mt-0 cl-text-center md:cl-text-left cl-text-6xl cl-mx-auto md:cl-mx-0 cl-mb-8 cl-max-w-sm cl-text-c3 cl-leading-none">
+                    {{ item.entity.field_title.value|raw }}
+                  </h3>
+                  <p class="cl-text-base cl-font-light" style="color: {{ color_text }}">
+                    {{ item.entity.field_subtitle.value|raw }}
+                  </p>
+                  {% set uri = item.entity.field_link.uri|split('internal:') %}
+                  {% set link_uri = uri[1] ? uri[1] : uri[0] %}
+                  {% if link_uri %}
+                    <div class="cl-mt-8 cl-flex cl-justify-center md:cl-justify-start">
+                      <a class="cl-text-center cl-cursor-pointer cl-text-black cl-px-8 cl-py-4 cl-w-auto cl-rounded cl-inline-block" style="border: 1px solid {{ color_text }}; color: {{ color_text }}; background: {{filling}}" href="{{ link_uri }}">
+                        {{ item.entity.field_link.title }}
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              {# col 1 #}
+
+              {# col 2 #}
+              <div class="lg:cl-w-8/12 lg:cl-ml-32">
+                <img class="cl-w-full" src="{{ file_url(item.entity.field_image_center.entity.uri.value) }}" alt="{{ item.entity.field_image_center.alt }}" title="{{ item.entity.field_image_center.alt }}">
+              </div>
+              {# col 2 #}
+
+            </div>
+
+          </div>
+        </div>
+
+        {% endif %}
+      {% endfor %}
+    </section>
+  {# slider item #}
+
+{% endif %}
+{# slider hablemos de malta #}
+
+{# slider sesiones club #}
+{% if content['#block_content'].field_type_slider.value == 'sesiones_club' %}
+
+ <section class="slider-content02 cl-mb-0">
+  {% for item in content['#block_content'].field_content_slider %}
+    {% if item.entity %}
+      {% set color_text = item.entity.field_text_color.value[0]['color'] %}
+      {% set filling = item.entity.field_filling.value %}
+
+        <div class="content-02 cl-text-c1 cl-bg-white cl-pt-0 cl-pb-16 cl-bg-cover lg:cl-py-32 lg:cl-pb-32" style="background-image:url('{{ file_url(item.entity.field_background.entity.uri.value) }}')">
+
+          <div class="cl-container cl-mx-auto cl-px-0 md:cl-px-4">
+            <div class="cl-mx-w-lg cl-flex cl-flex-col-reverse lg:cl-flex-row">
+              <div class="cl-w-5/6 cl-mx-auto lg:cl-w-4/12 cl-flex cl-items-center cl-py-10 lg:cl-py-0 lg:cl-mr-8 lg:cl-justify-end">
+                <div class="cl-px-4 md:cl-pl-8 cl-mt-8 md:cl-mt-0" style="color: {{ color_text }}">
+                  <hgroup>
+                    <h3 class="cl-font-secundary cl-text-center md:cl-text-left cl-text-6xl cl-leading-none cl-mb-8 cl-max-w-sm cl-text-c1">
+                      {{ item.entity.field_title.value|raw }}
+                    </h3>
+                  </hgroup>
+                  <p class="cl-text-base cl-font-light" style="color: {{ color_text }}">
+                    {{ item.entity.field_subtitle.value|raw }}
+                  </p>
+                  {% set uri = item.entity.field_link.uri|split('internal:') %}
+                  {% set link_uri = uri[1] ? uri[1] : uri[0] %}
+                  {% if link_uri %}
+                    <div class="cl-my-8 cl-flex cl-justify-center md:cl-justify-start">
+                      <a class="cl-text-center cl-cursor-pointer cl-text-black cl-px-8 cl-py-4 cl-w-auto cl-rounded cl-inline-block" style="border: 1px solid {{ color_text }}; color: {{ color_text }}; background: {{filling}}" href="{{ link_uri }}">
+                        {{ item.entity.field_link.title }}
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <div class="lg:cl-w-8/12 lg:cl-ml-32">
+                {% if item.entity.field_image_center.entity.uri.value %}
+                  <img class="cl-w-full object-cover"  src="{{ file_url(item.entity.field_image_center.entity.uri.value) }}" alt="{{ item.entity.field_image_center.alt }}" title="{{ item.entity.field_image_center.alt }}">
+                {% endif %}
+                {% if item.entity.field_video.value %}
+                  {% set video = item.entity.field_video.value|slice(32)|split('&') %}
+                  <iframe class="embed-responsive-item cl-w-full cl-h-full sesiones-video"
+                          src="https://www.youtube.com/embed/{{ video[0] }}"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  </iframe>
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+    {% endif %}
+  {% endfor %}
+</section>
+{% endif %}
+{# slider sesiones club #}
+
+{# slider sabor local #}
+{% if content['#block_content'].field_type_slider.value == 'sabor_local' %}
+   <section class="slider-content03 cl-mb-0">
+     {% for item in content['#block_content'].field_content_slider %}
+     {% if item.entity %}
+       {% set color_text = item.entity.field_text_color.value[0]['color'] %}
+       {% set filling = item.entity.field_filling.value %}
+
+        <div class="content-03 cl-text-c5 cl-bg-white cl-bg-cover" style="background-image:url('{{ file_url(item.entity.field_background.entity.uri.value) }}')">
+            <div class="cl-mx-auto">
+              <div class="cl-mx-w-lg cl-flex cl-flex-col-reverse lg:cl-flex-row">
+                {# col 1 #}
+                <div class="cl-w-5/6 cl-mx-auto lg:cl-w-4/12 cl-flex cl-items-center lg:cl-mr-8 cl-py-10 lg:cl-py-0 lg:cl-justify-end">
+                  <div class="cl-px-4 cl-mt-8 cl-pb-16 md:cl-pb-0 md:cl-mt-0 md:cl-ml-32" style="color: {{ color_text }}">
+                    <hgroup>
+                      <h3 class="cl-font-secundary cl-text-center md:cl-text-left cl-text-6xl cl-leading-none cl-mb-8 cl-max-w-sm cl-text-c5">
+                         {{ item.entity.field_title.value|raw }}
+                      </h3>
+                    </hgroup>
+                    <p class="cl-text-base cl-font-light cl-max-w-sm" style="color: {{ color_text }}">
+                      {{ item.entity.field_subtitle.value|raw }}
+                    </p>
+                    {% set uri = item.entity.field_link.uri|split('internal:') %}
+                    {% set link_uri = uri[1] ? uri[1] : uri[0] %}
+                    {% if link_uri %}
+                      <div class="cl-my-8 cl-flex cl-justify-center md:cl-justify-start">
+                        <a class="cl-text-center cl-cursor-pointer cl-text-black cl-px-8 cl-py-4 cl-w-auto cl-rounded cl-inline-block" style="border: 1px solid {{ color_text }}; color: {{ color_text }}; background: {{filling}}" href="{{ link_uri }}">
+                          {{ item.entity.field_link.title }}
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+                {# col 1 #}
+
+                {# col 2 #}
+                <div class="lg:cl-w-8/12 lg:cl-ml-32">
+                  <img class="cl-w-full" src="{{ file_url(item.entity.field_image_center.entity.uri.value) }}" alt="{{ item.entity.field_image_center.alt }}" title="{{ item.entity.field_image_center.alt }}">
+                </div>
+                {# col 2 #}
+              </div>
+            </div>
+        </div>
+
+      {% endif %}
+    {% endfor %}
+  </section>
+{% endif %}
+{# slider sabor local #}
+
+

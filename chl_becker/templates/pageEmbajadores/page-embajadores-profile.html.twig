@@ -1,0 +1,73 @@
+<div class="p-profile">
+	{% for item in page_profile %}
+		<section class="relative mb-12 lg:mb-0">
+			<div class="flex h-screen-embajadores items-center" id="btn-hero-video">
+				<picture>
+					<source media="(max-width:768px)" srcset="{{ item.img_mobile }}">
+					<img class="absolute h-full inset-0 banner-promo-background top-0 w-full mt-12 md:transform md:translate-x-16 xl:object-left-bottom object-cover" src="{{ item.img_desktop }}" alt="{{ item.img_desktop_alt }}">
+				</picture>
+				<div class="p-profile__information hidden lg:block">
+					<div class="relative top-12 profile-float">
+						<div>
+							<div class="absolute left-0 right-0 -top-8">
+								<img src="{{ profile_object.field_picture.value ? file_url(profile_object.field_picture.entity.getFileUri()) : profile_default_picture }}" alt="Perfil Becker" class="h-16 w-16 rounded-full mx-auto object-cover">
+							</div>
+							<h3 class="pt-10 text-sm text-center pb-4">
+								{{ profile.nikname }}
+							</h3>
+						</div>
+					</div>
+					<div class="relative top-16">
+						<p class="text-xs text-left">{{ profile.description }}
+						</p>
+						<p class="font-bold text-sm mt-8 font-fourth cursor-pointer " data-open="modal-rules-challenge">Reglas del
+							            juego<span class="float-right"><img src="/{{ directory }}/front-src/img/icon-info.svg" alt="Becker informacion reglas del juego" data-open="modal-rules-challenge"/></span>
+						</p>
+					</div>
+				</div>
+				<div class="p-profile__information-mobile lg:hidden flex absolute text-white items-center w-full py-2">
+					<div class="w-1/4">
+						<img src="{{ profile_object.field_picture.value ? file_url(profile_object.field_picture.entity.getFileUri()) : profile_default_picture }}" alt="Perfil Becker" class="h-12 w-12 rounded-full mx-auto object-cover">
+					</div>
+					<div class="w-2/3">
+						<h3 class="pt-2 text-xs pb-1">{{ profile.nikname }}</h3>
+						<p class="text-xxs mb-2">{{ profile.description }}</p>
+					</div>
+					<div class="w-1/4">
+						<p class="font-bold text-xs font-fourth cursor-pointer text-center pr-1" data-open="modal-rules-challenge">
+							Reglas del juego<img src="/{{ directory }}/front-src/img/icon-info.svg" alt="Becker informacion reglas del juego" class="w-4 h-4 mx-auto mt-1"  data-open="modal-rules-challenge"/></p>
+					</div>
+				</div>
+				<div class="flex text-white mt-64">
+					<div class="lg:w-1/2 md:w-2/3 lg:ml-44">
+						<h2 data-aos="fade-right" class=" leading-tight lg:ml-16 ml-8 text-5xl -mt-20 capitalize">{{ item.title }}</h2>
+						<p class="font-third lg:ml-16 ml-8 py-4 relative text-xs lg:w-1/2 ">{{ item.description }}</p>
+						<a id="id-retos" data-element="cta-embajadores-banner" data-animation-in="fadeInUp" href="{{ item.button_url }}" class="bg-secondary c-button flex items-center justify-between my-3 px-3 py-2 text-xs uppercase lg:w-40 w-48 lg:ml-16 ml-8 relative">
+							{{ item.button_title }}
+							<span>
+								<svg width="18" height="19" viewbox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</section>
+
+	<section class="relative bg-white overflow-hidden p-profile__challenges carousel-container">
+		<div id="retos" data-element="c-challenges"></div>
+		<p data-element="b-show-more-challenges" id="show-more-challeges" class="show-more text-center text-black cursor-pointer pb-4 lg:pb-0">Cargar Más</p>
+	</section>
+	<section class="relative bg-white overflow-hidden">
+		<div class="c-competitor lg:m-4">
+			<h2 class="text-xl">Mis Videos</h2>
+			<div data-element="c-user-challenges" class="grid grid-cols-1 justify-items-center lg:grid-cols-3 mb-4 "></div>
+			<p id="show-more-videos" data-element="b-show-more-user-challenges" class="show-more text-center cursor-pointer">Cargar más</p>
+		</div>
+	</section>
+</div>
+{% block modalRule %}
+	{% include '@chl_becker/components/modal-rules-challenge.html.twig' %}
+{% endblock %}

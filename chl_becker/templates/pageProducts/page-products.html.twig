@@ -1,0 +1,190 @@
+{# INICIO COMPONENTE SLIDER BANNER PRODUCTOS #}
+
+<section class="bg-fourth component-slider-banner-products text-white">
+{% if animacion == TRUE %}
+	<div class="character z-10 animation-beer-slide hidden lg:block">
+		<img id="spriteBeerGray" src="/{{ directory }}/front-src/img/tmp/becker_sprite_gris.png" class="character_spritesheet pixelart opacity-0 play" alt="Creveza Becker Gris"/>
+		<img id="spriteBeerBlack" src="/{{ directory }}/front-src/img/tmp/becker_sprite_negra.png" class="character_spritesheet pixelart hidden" alt="Creveza Becker Negra"/>
+		<img id="spriteBeerGold" src="/{{ directory }}/front-src/img/tmp/becker_sprite_dorada.png" class="character_spritesheet pixelart hidden" alt="Creveza Becker Dorada"/>
+	</div>
+	<img src="/{{ directory }}/front-src/img/tmp/Becker_Roja.png" class="hidden absolute red-beer" alt="Creveza Becker roja"/>
+	<div id="slider-animation" class="slider slider_banner_principal">
+		<div class="slide-1 slide-item">
+			<div class="grid grid-cols-2 lg:flex items-center justify-evenly">
+				<div class="slider-content relative  z-10">
+					<h2 data-animation-in="fadeInRight" class="leading-none lg:text-6xl text-2xl">
+						<span class="text-sm">1991</span><br>
+						NACIMIENTO:</h2>
+					<p data-animation-in="fadeInLeft" class="py-3 text-sm">Nuestras primeras latas aparecen junto con los inicios de Cervecería Chile. Nuestra misión: crear una cerveza chilena tipo lager, de espíritu joven, con un sabor refrescante, fácil de tomar y muy amigable para todas y todos.
+					</p>
+				</div>
+				<div class="mt-8">
+					<img data-animation-in="fadeInLeft" data-duration-in="2" class="slide-image-1 slider-animation image-sm lg:hidden block ml-auto md:mx-auto" src="/{{ directory }}/front-src/img/lata-becker-product.png"/>
+				</div>
+			</div>
+		</div>
+		<div class="slide-2 slide-item">
+			<div class="flex items-center justify-evenly">
+				<div class="slider-content relative z-10">
+					<h2 data-animation-in="fadeInRight" class="leading-none lg:text-6xl text-2xl">
+						<span class="text-sm">2010</span><br>
+						GATO SURFER:</h2>
+					<p data-animation-in="fadeInLeft" class="py-3 text-sm">El 2010, generamos un gran hito, dando vida a un mito urbano que nos inspiró a crear una frase que acompañó a la marca por mucho tiempo: Te invitamos a ver lo que otros no ven. Una invitación a ver que Becker es mucho más que una buena cerveza.
+					</p>
+				</div>
+				<div class="slider-animation w-6/12">
+					<img data-animation-in="fadeInUp" data-duration-in="2" class="slide-image-1 slider-animation image-sm lg:hidden block" src="/{{ directory }}/front-src/img/lata-becker-product.png"/>
+				</div>
+			</div>
+		</div>
+		<div class="slide-3 slide-item">
+			<div class="flex items-center justify-evenly">
+				<div class="slider-content relative  z-10">
+						<h2 data-animation-in="fadeInRight" class="leading-none lg:text-6xl text-2xl">
+							<span class="text-sm">2018</span><br>BECKER RETORNABLE:</h2>
+						<p data-animation-in="fadeInLeft" class="py-3 text-sm">Porque sabemos que es tiempo de sumarse con grandes y pequeños aportes para cuidar nuestro planeta, en el 2018, creamos nuestro famoso Botellín Retornable.</p>
+				</div>
+				<div data-animation-in="fadeInLeft" class="slider-animation w-6/12">
+					<img data-animation-in="fadeInLeft" data-duration-in="2" class="slide-image-1 slider-animation image-sm lg:hidden block" src="/{{ directory }}/front-src/img/lata-becker-product.png"/>
+				</div>
+			</div>
+		</div>
+		<div id="slide-doble-beer" class="slide-4 slide-item">
+			<div class="flex items-center justify-evenly">
+				<div class="slider-content relative  z-10">
+					<h2 data-animation-in="fadeInRight" class="leading-none lg:text-6xl text-2xl">
+						<span class="text-sm">2020</span><br>CRECE LA FAMILIA:</h2>
+					<p data-animation-in="fadeInLeft" class="py-3 text-sm">En el 2020, nuestra querida Becker Clásica ya no está más sola, desde esa fecha comparte casa junto a Becker Roja y Becker Negra.</p>
+				</div>
+				<div data-animation-in="fadeInRight" class="slider-animation w-6/12">
+					<img data-animation-in="fadeInRight" data-duration-in="2" class="slide-image-1 slider-animation images-sm lg:hidden block" src="/{{ directory }}/front-src/img/lata-becker-product-03.png"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-2 slide-item">
+			<div class="flex items-center justify-evenly">
+				<div class="slider-content relative  z-10">
+					<div>
+						<h2 data-animation-in="fadeInRight" class="leading-none lg:text-6xl text-lg">
+							<span class="text-sm">2021</span><br>BECKER DOBLE MALTA:</h2>
+						<p data-animation-in="fadeInLeft" class="py-3 text-sm">¡Nuestro conchito! Para que todos los chilenos disfruten el doble de sabor, en el 2021 lanzamos una nueva variedad: Becker Doble Malta, una lager refrescante y con espuma cremosa, hecha con Malta Pilsen y Malta Caramelo.
+						</p>
+					</div>
+				</div>
+				<div data-animation-in="fadeInLeft" class="slider-animation w-6/12">
+					<img data-animation-in="fadeInLeft" data-duration-in="2" class="slide-image-1 slider-animation image-sm lg:hidden block" src="/{{ directory }}/front-src/img/lata-becker-product-04.png"/>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+{% endif %}
+</section>
+{# FIN #}
+{# INICIO COMPONENTE VARIANTES PRODUCTOS #}
+<section class="component-varieties-products lg:pb-24 lg:pt-48 pt-20">
+
+	{% for item in varieties_products %}
+		<div class="slider_banner_varieties slick-wrap">
+			{% for item_slide in item['slides'] %}
+				<div
+					class="varieties_products ">
+					<!-- Button trigger modal -->
+					<div class="lg:flex">
+						<div class="lg:w-1/2 pt-14 relative">
+							<button data-animation-in="bounceInDown" class="play-video btn-modal absolute bg-secondary duration-150 ease-linear md:right-96 flex focus:outline-none h-12 hover:shadow-lg items-center justify-center outline-none lg:right-56  right-56 rounded-full top-9 w-12 z-50" data-video-src="{{item_slide.video}}" type="button">
+								<svg width="20" height="22" viewbox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M19.6765 11.0003L0.662429 21.9781L0.66243 0.0224878L19.6765 11.0003Z" fill="#F2F2F2"/>
+								</svg>
+							</button>
+							<img data-animation-in="bounceInUp" src="{{item_slide.image_beer}}" alt="{{item_slide.image_beer_alt}}" class="absolute lg:right-10 lg:w-auto md:right-48 md:w-2/6 right-24 top-0 w-5/12 z-20">
+							<img data-animation-in="fadeInRight" src="{{item_slide.image_background}}" alt="{{item_slide.image_background_alt}}" class="h-48 lg:h-auto lg:w-auto md:w-6/12 w-8/12 md:h-96">
+						</div>
+						<div class="lg:w-1/2 pl-2">
+							<div class="lg:mt-0 lg:w-5/12 md:mt-40 mt-28 mx-8 w-4/5">
+								<div class="flex lg:block">
+									<h2 data-animation-in="fadeInRight" class="color-primary leading-none lg:text-7xl text-4xl">{{item_slide.title}}</h2>
+									<h3 data-animation-in="fadeInLeft" class="lg:text-sm lg:pl-0 pl-5">{{item_slide.description}}</h3>
+								</div>
+								<div class="flex justify-center lg:justify-start lg:mt-6 lg:text-left mt-14">
+									<p data-animation-in="fadeInLeft" class="font-secondary leading-6 mr-10 text-3xl">{{item_slide.ibu}}
+										<span data-animation-in="fadeInRight" class="text-xs uppercase block">ibu</span>
+									</p>
+									<p data-animation-in="fadeInLeft" class="font-secondary leading-6 mr-10 text-3xl">{{item_slide.abv}}
+										<span data-animation-in="fadeInRight" class="text-xs uppercase block">abv</span>
+									</p>
+									<p data-animation-in="fadeInLeft" class="font-secondary leading-6 text-3xl">{{item_slide.cc}}
+										<span data-animation-in="fadeInRight" class="text-xs uppercase block">cc</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+			{% endfor %}
+		{% endfor %}
+	</div>
+</section>
+{# FIN #}
+
+
+{# COMPONENTE VIDEO #}
+<section class="component-video relative">
+	{% for item in video %}
+		<div class="flex items-center" id="btn-hero-video" data-video="{{item.video}}">
+			<div class="absolute lg:ml-32 lg:w-1/3 ml-8 text-white w-1/2">
+				<h3 data-aos="fade-right" class="leading-none text-7xl ">{{item.title}}</h3>
+				<p data-aos="fade-right">{{item.description | raw}}</p>
+			</div>
+			<img src="{{item.image}}" alt="{{item.image_alt}}" class="object-cover object-top w-full">
+			<button data-animation-in="bounceInDown" class="play-video btn-modal absolute left-0 m-auto right-0" data-video-src="https://www.youtube.com/embed/z1IORgQ7Tks" type="button">
+				<svg width="83" height="83" viewbox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="41.5" cy="41.5" r="41.5" fill="white"/>
+					<path d="M52.0215 41.5001L36.2398 50.6117L36.2398 32.3886L52.0215 41.5001Z" fill="black"/>
+				</svg>
+			</button>
+		</div>
+		<div id="hero-video" class="absolute top-0 w-full"></div>
+	{% endfor %}
+</section>
+{# FIN #}
+
+
+{# COMPONENTE PRODUCTOS #}
+<section class="component-products">
+	<div class="container mx-auto pt-12">
+		<h2 data-aos="fade-right" class="lg:text-3xl my-12 px-4 color-primary text-xl">Productos</h2>
+		{% for item in products %}
+			<div class="slider_banner_productos">
+				{% for item_product in item['products'] %}
+					<div>
+						<div data-aos="fade-left" class="products w-4/5 mx-auto">
+							<img class="m-auto pb-2 w-auto" src="{{item_product.image}}" alt="{{item_product.image_alt}}">
+
+							<div class="bg-fourth text-white p-2">
+								<h2 class="text-sm">
+									{{item_product.name}}</h2>
+								<p class="text-xs">
+									{{item_product.cc}}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+</section>
+{# FIN #}
+
+{# COMPONENTE FORMULARIO #}
+<section class="component-form-register lg:px-0">
+	<div class="bg-secondary container lg:pb-16 lg:pt-24 lg:px-16 mx-auto pb-28 pt-24 px-6">
+		{{ drupal_entity('webform', 'form_register') }}
+	</div>
+</section>
+{# FIN #}

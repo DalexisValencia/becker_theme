@@ -1,0 +1,60 @@
+{{ attach_library("cenas_virtuales/masonry") }}
+<section class="grid-images">
+  {# item #}
+  <div class="grid_rede cl-flex cl-flex-wrap">
+    {% for item in content['#block_content'].field_content_images %}
+
+      {% if item.entity %}
+
+      {% if item.entity.field_width_block.value == 'square' %}
+        {% set width_image = 'md:cl-w-1/3' %}
+      {% else %}
+        {% set width_image = 'md:cl-w-1/2' %}
+      {% endif %}
+
+      {# item #}
+        <div class="grid-item cl-relative cl-w-auto cl-w-full cl-bg-cover  cl-bg-center {{ width_image }}">
+          <img class="cl-w-full cl-object-cover h-100" src="{{ file_url(item.entity.field_background.entity.uri.value) }}" alt="{{ item.entity.field_background.alt }}" title="{{ item.entity.field_background.alt }}" />
+          {% set uri = item.entity.field_link.uri|split('internal:') %}
+          {% set uri = uri[1] ? uri[1] : uri[0] %}
+
+          {% if uri%}
+
+          <a class=" cl-w-full cl-h-full cl-absolute cl-left-0 cl-top-0 cl-z-20 cl-h-full hover:cl-bg-c2 hover:cl-bg-opacity-25" href="{{uri}}">
+            <div class="cl-w-full  cl-p-4 cl-text-center md:cl-text-left">
+              {% if item.entity.field_image_center.entity.uri.value %}
+                <img class="cl-w-10 cl-block cl-my-4 cl-mx-auto lg:cl-mx-0" src="{{ file_url(item.entity.field_image_center.entity.uri.value) }}" alt="{{ item.entity.field_image_center.alt }}" title="{{ item.entity.field_image_center.alt }}">
+              {% endif %}
+              <h5 class="cl-text-white cl-font-secundary cl-text-5xl">
+                {{ item.entity.field_sub_title.value }}
+              </h5>
+
+            </div>
+          </a>
+
+          {% else %}
+
+          <div class=" cl-w-full cl-h-full cl-absolute cl-left-0 cl-top-0 cl-z-20 cl-h-full">
+            <div class="cl-w-full  cl-p-4 cl-text-center md:cl-text-left">
+              {% if item.entity.field_image_center.entity.uri.value %}
+                <img class="cl-w-10 cl-block cl-my-4 cl-mx-auto lg:cl-mx-0" src="{{ file_url(item.entity.field_image_center.entity.uri.value) }}" alt="{{ item.entity.field_image_center.alt }}" title="{{ item.entity.field_image_center.alt }}">
+              {% endif %}
+              <h5 class="cl-text-white cl-font-secundary cl-text-5xl">
+                {{ item.entity.field_sub_title.value }}
+              </h5>
+
+            </div>
+          </div>
+
+          {% endif %}
+
+
+        </div>
+      {# item #}
+
+      {% endif %}
+
+    {% endfor %}
+  </div>
+  {# item #}
+</section>

@@ -1,0 +1,16 @@
+<div class="w-full h-full">
+	<iframe width="100%" height="100%" src={{linkVideo}}></iframe>
+	<div class="section-information-video text-white">
+		<h3 class="mb-2">{{nickname}}</h3>
+		<div class="flex border-b border-white font-bold justify-around">
+			{% if views %}
+				<p class="views">{{views}}</p>
+			{% endif %}
+			{% if datePublic %}
+				<p class="time-public">{{datePublic}}</p>
+			{% endif %}
+		</div>
+		<h3 class="mb-1/2">{{title}}</h3>
+		<p>{{hashtag}}</p>
+	</div>
+</div>

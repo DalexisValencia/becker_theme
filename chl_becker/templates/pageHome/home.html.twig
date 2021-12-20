@@ -1,0 +1,106 @@
+<section class="component-banner-principal" id="contenido2">
+  {% for item in slider_home %}
+  <div class="slider_banner_principal">
+    {% for item_slide in item['slides'] %}
+    <div>
+      <div class="flex justify-content-end relative slide__content">
+        <div class="flex flex-1 items-center">
+            <div class="content__banner_principal absolute left-0 lg:pl-24 lg:w-7/12 md:pl-14 md:w-7/12 pl-11 text-white w-4/6 xl:w-5/12 z-20">
+              <h2 data-animation-in="fadeInRight" class="leading-none lg:text-6xl text-4xl">{{item_slide.title}}</h2>
+              <p data-animation-in="fadeInLeft" class="py-3 text-sm">{{item_slide.description}}</p>
+              <a data-animation-in="fadeInUp" href="{{item_slide.url_link}}" class="bg-secondary c-button flex items-center justify-between my-3 px-3 py-2 text-xs uppercase w-36">{{item_slide.name_link}}
+                <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+                  </svg></span>
+              </a>
+            </div>
+            <img data-animation-in="fadeInUp" class="-bottom-12 absolute animated fadeInUp lg:right-28 lg:w-2/12 md:w-1/6 right-4 slide__img w-3/12 z-20" src="/{{ directory }}/front-src/img/lata-becker-lager.png" alt="Becker lata">
+          </div>
+       <img data-animation-in="zoomIn" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}" class="bg-slider_principal object-cover object-center w-7/12 xl:w-9/12">
+
+      </div>
+   </div>
+
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+{# COMPONENTE SLIDER NOVEDADES #}
+<section class="component-banner-novelties">
+  <h2 class="container lg:text-3xl my-8 px-8 text-white text-xl" data-aos="fade-right">Novedades</h2>
+  {% for item in slider_novelties %}
+    <div class="slider_banner_novelties">
+      {% for item_slide in item['slides'] %}
+        <div data-aos="fade-up-left" class="text-white">
+          <div class="flex items-center justify-end lg:ml-28 mx-auto relative">
+              <div class="content_slider_novelties absolute left-6 lg:-left-4 lg:w-7/12 text-white w-1/2">
+              <p class="lg:py-3 pt-1.5 text-sm">Lanzamiento</p>
+              <h3 class="leading-none ">{{item_slide.title}}</h3>
+              <a href="{{item_slide.url_link}}" class="bg-secondary c-button flex items-center justify-between my-3 px-3 py-2 text-xs uppercase w-36">{{item_slide.name_link}}
+                <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+                  </svg></span>
+              </a>
+            </div>
+            <img src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}" class="w-10/12">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+
+{# COMPONENTE SPOTIFY #}
+<section class="component-banner-spotify bg-third">
+  {% for item in banner_spotify %}
+        <div class="container items-center lg:flex mx-auto pt-16 px-10">
+          <div class="text-white lg:w-4/12">
+            <h2 data-aos="fade-right" class="leading-none text-6xl">{{item.title}}<span class="color-primary">{{item.subtitle}}</span></h2>
+            <p data-aos="fade-left" class="float-left lg:w-auto py-3 text-sm w-1/2">{{item.text}}</p>
+            <a data-aos="flip-right" href="{{item.url_link}}" class="c-button color-primary flex float-right items-baseline justify-between lg:w-32 mt-16 px-3 text-xs uppercase w-1/2">{{item.name_link}}
+              <span><svg width="60" height="60" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 0V7.5H62.2125L0 69.7125L5.2875 75L67.5 12.7875V60H75V0H15Z" fill="#3A3B82"/>
+                </svg></span>
+            </a>
+        </div>
+        <div class="flex justify-end lg:pt-0 lg:w-8/12 pt-4 w-full">
+            <img data-aos="zoom-in-up" src="{{item.image_desktop}}" alt="{{item.image_desktop_alt}}" class="lg:block hidden">
+            <img data-aos="zoom-in-up" src="{{item.image_mobile}}" alt="{{item.image_mobile_alt}}" class="block lg:hidden">
+       </div>
+        </div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+{# COMPONENTE VIDEO #}
+ <section class="component-video relative">
+  {% for item in video %}
+    <div class="flex items-center play-video" id="btn-hero-video" data-video-src="{{item.video}}">
+      <h3 data-aos="fade-right" class="absolute leading-none lg:ml-16 ml-8 text-5xl text-white w-1/4">{{item.title}}</h3>
+      <p>{{item.description | raw}}</p>
+     <img src="{{item.image}}"  alt="{{item.image_alt}}" class="object-cover object-top w-full">
+     <svg class="absolute left-0 m-auto right-0" width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="41.5" cy="41.5" r="41.5" fill="white"/>
+        <path d="M52.0215 41.5001L36.2398 50.6117L36.2398 32.3886L52.0215 41.5001Z" fill="black"/>
+        </svg>
+    </div>
+    <div id="hero-video" class="absolute top-0 w-full" >
+
+    </div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+{# COMPONENTE FORMULARIO #}
+<section class="component-form-register lg:pt-24 lg:px-0 pt-16">
+  <div class="bg-secondary container lg:pb-16 lg:pt-24 lg:px-16 mx-auto pb-28 pt-24 px-6">
+  {{ drupal_entity('webform', 'form_register') }}
+ </div>
+</section>
+{# FIN #}
+
+

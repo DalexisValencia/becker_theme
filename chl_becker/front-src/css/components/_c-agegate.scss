@@ -1,0 +1,555 @@
+/* ageGate steps */
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.agegate-visible {
+    overflow: hidden;
+}
+
+#agv2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    font-size: 16px !important;
+    font-family: var(--font-family-primary) !important;
+    background-color: #ffffff;
+}
+
+#agv2 .agv2__container {
+    background-size: cover !important;
+    display: block !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 100vh;
+}
+
+#agv2 .agv2__container.black {
+    color: black;
+}
+
+#agv2 .agv2__container.white {
+    color: white;
+}
+
+#agv2 .agv2__wrapper {
+    width: 100%;
+    padding: 0 !important;
+    max-width: 630px !important;
+    margin: 6rem 0px 0px 6rem !important;
+    background: #ec5367;
+    transition: 1s;
+    -moz-transition: 1s;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+}
+
+#agv2 .agv2__brand {
+    max-width: 350px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#agv2 .agv2__brand img {
+    width: 80%;
+    margin: 0 auto;
+    display: none;
+}
+
+#agv2 .agv2__p {
+    font-size: 1rem;
+}
+
+#agv2 .agv2__p.small {
+    font-size: 0.6rem;
+    color: white;
+}
+
+#agv2 .agv2__p.bold {
+    color: white;
+    padding-top: 1rem;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+#agv2 .agv2__input {
+    background: #de495c;
+    border-radius: 0;
+    color: #ffffff;
+    margin: 0.5rem;
+    border-style: none;
+    width: 98px;
+    height: 150px;
+    text-align: center;
+    font-size: 4rem;
+}
+
+#agv2 .agv2__input::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+#agv2 input[type='number'] {
+    appearance: textfield;
+}
+
+#agv2 .agv2__checkbox {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: 0.5em;
+    font-size: 2rem;
+    margin-top: 0rem;
+    color: white;
+}
+
+#agv2 .agv2__checkbox--disabled {
+    color: var(--disabled);
+}
+
+#agv2 .agv2__checkbox .checkbox__control {
+    display: inline-grid;
+    border-radius: 0;
+    width: 22px;
+    height: 20px;
+    background: #ec5367;
+    border: 1px solid white;
+}
+
+#agv2 .agv2__checkbox .checkbox__control svg {
+    transition: transform 0.1s ease-in 25ms;
+    transform: scale(0);
+    transform-origin: bottom left;
+}
+
+#agv2 .agv2__checkbox .checkbox__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.5rem;
+}
+
+#agv2 .agv2__checkbox .checkbox__input>* {
+    grid-area: checkbox;
+}
+
+#agv2 .agv2__checkbox .checkbox__input input {
+    opacity: 0;
+    width: 1em;
+    height: 1em;
+}
+
+#agv2 .agv2__checkbox .checkbox__input input:focus+.checkbox__control {
+    box-shadow: 0 0 0 0.05em #ec5367, 0 0 0.15em 0.1em currentColor;
+}
+
+#agv2 .agv2__checkbox .checkbox__input input:checked+.checkbox__control svg {
+    transform: scale(1);
+}
+
+#agv2 .agv2__checkbox .checkbox__input input:disabled+.checkbox__control {
+    color: var(--disabled);
+}
+
+#agv2 .agv2__label {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+#agv2 .form-age {
+    margin: 2rem !important;
+}
+
+#agv2 .form-age__content {
+    margin: 1rem 0;
+    position: relative;
+}
+
+#agv2 .form-age__navigation {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    left: 13%;
+    top: 40%;
+}
+
+@-moz-document url-prefix() {
+    #agv2 .form-age__navigation {
+        left: -3rem;
+    }
+}
+
+#agv2 .agegate-legal {
+    margin: 0.5rem 0 1rem;
+    text-align: left;
+}
+
+#agv2 .agegate-legal__row {
+    text-align: left;
+    margin: 0!important;
+}
+
+#agv2 .agegate__btns {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#agv2 .agegate__btn.main {
+    width: 160px;
+    height: 48px;
+    text-align: center;
+    font-size: 1rem;
+    color: #ec5367;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#agv2 .form-age__back {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 0;
+}
+
+#age-gate-01 .error-year {
+    font-weight: bold;
+    color: red;
+}
+
+#age-gate-02 .error-year,
+#age-gate-03 .error-year {
+    font-weight: bold;
+    color: white;
+}
+
+.buttons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+
+.buttons button {
+    border: none;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.buttons #top {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+}
+
+.buttons #bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+.buttons #left {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+}
+
+.buttons #right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.top-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    transition: all 0.9s cubic-bezier(0.6, 0.05, 0.4, 1);
+}
+
+.top-layer.active {
+    top: 100%;
+}
+
+.top-layer--2 {
+    transition-delay: 0.6s;
+}
+
+.top-layer--3 {
+    transition-delay: 0.4s;
+}
+
+.top-layer--4 {
+    transition-delay: 0.2s;
+}
+
+.top-layer--5 {
+    transition-delay: 0.1s;
+}
+
+.bottom-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.bottom-layer.active {
+    top: -100%;
+}
+
+.bottom-layer--2 {
+    transition-delay: 0.12s;
+}
+
+.bottom-layer--3 {
+    transition-delay: 0.4s;
+}
+
+.left-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: auto;
+    left: -100%;
+    bottom: auto;
+    right: auto;
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.left-layer.active {
+    left: 0;
+}
+
+.left-layer--2 {
+    transition-delay: 0.3s;
+}
+
+.left-layer--3 {
+    transition-delay: 0.12s;
+}
+
+.left-layer--4 {
+    transition-delay: 0.08s;
+}
+
+.right-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: auto;
+    left: -100%;
+    bottom: auto;
+    right: auto;
+    transition: all 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.right-layer.active {
+    left: 0;
+}
+
+.right-layer--2 {
+    transition-delay: 0.3s;
+}
+
+.right-layer--3 {
+    transition-delay: 0.2s;
+}
+
+
+/* animation agegate */
+
+
+/* media querys */
+
+@media (max-width: 420px) {
+    #agv2 .agv2__container {
+        background-image: image('agegate-mobile-becker.jpg') !important;
+        background-size: 100% !important;
+        background-repeat: no-repeat !important;
+    }
+    #agv2 .agv2__wrapper {
+        margin: 8rem auto !important;
+        width: 90%;
+    }
+    #agv2 .agegate__btn.main {
+        height: 45px;
+        line-height: 3rem;
+        margin-top: 1rem;
+    }
+    #agv2 .agv2__input {
+        width: 66px;
+        height: 100px;
+        font-size: 2.5rem;
+        margin: 0 0.1rem;
+        border-radius: 0;
+        padding: 0 0.5rem;
+    }
+    #agv2 .form-age__back {
+        width: 30px;
+        height: 30px;
+    }
+    #agv2 .agv2__brand img {
+        width: 50%;
+        display: none;
+    }
+    #agv2 .agv2__label {
+        font-size: 1rem;
+    }
+    .year2:after {
+        display: none;
+    }
+    .year2:before {
+        display: none;
+    }
+    #agv2 .agegate-legal {
+        margin: 0;
+    }
+    #agv2 .agegate__btns {
+        margin: 0;
+    }
+    #agv2 .agv2__p.small {
+        font-size: 0.5rem;
+        text-align: center;
+        padding: 1rem 1rem 0px 1rem;
+    }
+    #agv2 .agegate-legal__row {
+        margin: 0;
+    }
+    #agv2 .footer a {
+        display: flex;
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+    #agv2 footer img {
+        display: none;
+    }
+}
+
+@media (min-height: 900px) {
+    #agv2 .agv2__brand img {
+        width: 70%;
+    }
+    #agv2 .agv2__input {
+        width: 98px;
+        height: 150px;
+    }
+}
+
+@media (max-height: 768px) {
+    #agv2 .agv2__brand img {
+        width: 66%;
+    }
+    #agv2 .agegate-legal {
+        margin: 0;
+    }
+    #agv2 .agegate__btns {
+        margin: 0;
+    }
+}
+
+@media (max-height: 824px) {
+    .year,
+    .year2 {
+        width: auto;
+    }
+}
+
+@media (max-height: 640px) {
+    #agv2 .footer p {
+        font-size: 0.8rem;
+        line-height: 1.2;
+        letter-spacing: 3px;
+    }
+    .year {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .year2 {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-height: 667px) {
+    #agv2 .agv2__brand img {
+        width: 40%;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 640px) {
+    #agv2 .form-age__navigation {
+        left: 0;
+        top: 46%;
+    }
+    #agv2 .social-media ul li a:before {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    #agv2 .form-age {
+        margin: 0rem!important;
+    }
+    #agv2 .agv2__input {
+        width: 56px !important;
+        height: 88px !important;
+    }
+    #agv2 .form-age__navigation {
+        left: 8% !important;
+    }
+}
+
+
+/* media querys */
+
+
+/*# sourceMappingURL=agegate.css.map */
+
+.agegate-visible {
+    background: #3b3b83;
+}
+
+.agegate-visible footer {
+    width: 100%;
+    position: absolute;
+    bottom: -480px;
+    text-align: left !important;
+}
+
+#agv2 .social-media ul {
+    display: flex;
+    justify-content: center;
+}
+
+#agv2 .social-media ul li {
+    padding: 0 0.5rem;
+}

@@ -1,0 +1,134 @@
+<div class="p-challege">
+  {% for item_page in page_challenge %}
+    <section class="relative mb-12 lg:mb-0">
+      <div class="flex h-banner-challenge lg:items-center">
+        <picture>
+          <source media="(max-width:768px)" srcset="{{ item_page.img_mobile }}">
+          <img
+            class="absolute h-full inset-0 md:object-center mt-12 object-cover object-right banner-promo-background top-0 w-full"
+            src="{{ item_page.img_desktop }}" alt="{{ item_page.img_desktop_alt }}">
+        </picture>
+        <div class="p-profile__information hidden lg:block">
+          <div class="relative top-36 profile-float">
+            <div>
+              <div class="absolute left-0 right-0 -top-8">
+                <img
+                  src="{{ profile_object.field_picture.value ? file_url(profile_object.field_picture.entity.getFileUri()) :
+                  profile_default_picture }}" alt="Perfil Becker" class="h-16 w-16 rounded-full mx-auto object-cover">
+              </div>
+              <h3 class="pt-10 text-sm text-center pb-4">
+                {{ profile.nikname }}
+              </h3>
+            </div>
+          </div>
+          <div class="relative top-40">
+            <p class="text-xs text-left">{{ profile.description }}</p>
+            <p class="font-bold text-sm mt-8 font-fourth cursor-pointer flex justify-between" data-open="modal-rules-challenge">Reglas del
+              juego<img src="/{{ directory }}/front-src/img/icon-info.svg"
+                                                  alt="Becker informacion reglas del juego"/ data-open="modal-rules-challenge"></p>
+          </div>
+        </div>
+        <div class="p-profile__information-mobile lg:hidden flex absolute text-white items-center w-full py-2">
+          <div class="w-1/4">
+            <img src="{{ profile_object.field_picture.value ? file_url(profile_object.field_picture.entity.getFileUri()) :
+              profile_default_picture }}" alt="Perfil Becker"
+                 class="h-12 w-12 rounded-full mx-auto object-cover">
+          </div>
+          <div class="w-2/3">
+            <h3 class="pt-2 text-xs pb-1">{{ profile.nikname }}</h3>
+            <p class="text-xxs mb-2">{{ profile.description }}</p>
+          </div>
+          <div class="w-1/4">
+            <p class="font-bold text-xs font-fourth cursor-pointer text-center pr-1" data-open="modal-rules-challenge">
+              Reglas del juego<img src="/{{ directory }}/front-src/img/icon-info.svg"
+              alt="Becker informacion reglas del juego" class="w-4 h-4 mx-auto mt-1" data-open="modal-rules-challenge"/></p>
+            
+          </div>
+        </div>
+        <div class="flex text-white top-36 lg:mt-18 lg:w-9/12 lg:-top-2 relative">
+          <div class="lg:w-1/2 md:w-2/3 lg:ml-52 pt-10">
+            <p class="lg:ml-16 ml-5 lg:mt-0 font-bold">Reto # {{challenge.id}}</p>
+            <h2 data-aos="fade-right" class=" leading-tight lg:ml-16 ml-5 lg:text-3xl text-2xl font-bold lg:mt-0 mt-12">{{ challenge.name }}</h2>
+            <div class="font-third lg:ml-16 ml-5 py-4 relative text-sm w-4/5">{{ challenge.description | raw }}</div>
+            {% if challenge.status == "unlocked" and not challenge_user.url_video %}
+              <div class="flex lg:ml-16 ml-5 space-x-4 mb-6 items-center border-2 p-1 lg:mr-0 mr-2">
+                <div class="relative">
+                  <p class="text-sm font-bold ml-4">El reto termina en</p>
+                </div>
+                <div class="w-full">
+                  <div class="flex justify-around w-11/12 lg:w-2/3 mx-auto">
+                    <p class="text-xs">Dias</p>
+                    <p class="text-xs">Hrs</p>
+                    <p class="text-xs">Mins</p>
+                    <p class="text-xs">Segs</p>
+                  </div>
+                  <div id="countDown" class="flex justify-around w-11/12 lg:w-2/3 mx-auto"
+                       end-date="{{ challenge.end_date }} 23:59:59">
+                    <p class="font-digital text-3xl day">00</p>
+                    <p class="font-digital text-3xl hour">00</p>
+                    <p class="font-digital text-3xl min">00</p>
+                    <p class="font-digital text-3xl sec">00</p>
+                  </div>
+                </div>
+                
+              </div>
+           
+          <form id="{{ form['#id'] }}" method="{{ form['#method'] }}">   
+          
+              <span class="input-add-check">
+                {{ form.url_video }}
+              </span>
+             
+              <div class="text-xxs lg:ml-16 ml-5 mt-4">Copia la URL directamente desde la barra del navegador.</div>
+            <div class="w-9/12 lg:w-full mt-7 flex flex-col lg:flex-row lg:justify-between items-center mx-auto lg:items-stretch">
+              <a href="{{ path('ch_becker.embajadores.profile') }}"
+                 class="hidden lg:flex c-button items-center my-3 px-3 text-xs lg:w-40 w-48 lg:ml-12 ml-8 relative font-fourth font-medium">
+                <img src="/{{ directory }}/front-src/img/vector-back.png"><span class="ml-3">Regresar</span>
+              </a>
+
+            <div class="lg:hidden block container-video-top mx-auto">
+              <div id="preview-video-mobile" class="w-full h-full">
+              </div>
+            </div>
+              
+              <div class="flex flex-row items-center bg-secondary h-12 lg:mt-0 mt-4">
+                {{ form.submit }} 
+                {{ form.form_build_id }} {{ form.form_token }} {{ form.form_id }}
+                <img class="h-1/3 ml-1 mr-7" src="/{{ directory }}/front-src/img/vector.png">
+              </div>
+
+            </div>
+          </form>     
+              
+            {% else %}
+              <p class="text-3xl font-bold uppercase lg:ml-16 ml-8 py-4 relative text-sm w-4/5">Reto completado</p>
+              <p class="text-xs mb-2 lg:ml-16 ml-8 font-third">Quieres cambiar el video? Haz <span class="underline" data-open="modal-change-challenge">click aquí</span></p>
+              <a href="{{ path('ch_becker.embajadores.profile') }}"
+                 class="hidden lg:flex c-button items-center my-3 px-3 mt-14 text-xs lg:w-40 w-48 lg:ml-12 ml-8 relative font-fourth font-medium">
+                <img src="/{{ directory }}/front-src/img/vector-back.png"><span class="ml-3">Regresar</span>
+              </a>
+
+            <div class="lg:hidden block container-video-top mx-auto">
+              <div id="preview-video-mobile" class="w-full h-full">
+            </div>
+            </div>
+            {% endif %}
+            
+           
+          </div>
+        </div>
+
+        <div class="hidden lg:block container-video-top"> 
+          <div id="preview-video" class="w-full h-full">
+          </div>
+          <p class="text-white text-xs -mt-5 text-center">Previsualiza tu video</p>
+        </div>
+        <p id="urlvideo" class="hidden">{{challenge_user.url_video}}</p>
+      </div>
+    </section>
+  {% endfor %}
+</div>
+{% block modalRule %}
+  {% include '@chl_becker/components/modal-rules-challenge.html.twig' %}
+  {% include '@chl_becker/components/modal-change-challenge.html.twig' %}
+{% endblock %}

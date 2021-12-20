@@ -1,0 +1,43 @@
+//
+// Element Select
+//
+
+%select {
+  @extend %control;
+}
+
+select {
+  @extend %select;
+}
+
+.form-item-question select {
+  width: 100% !important;
+}
+
+.js-form-item {
+  select {
+  color: white;
+  background: var(--color-primary);
+  border-bottom: 1px solid;
+  width: 68%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0;
+  }
+}
+.form-ambassador{
+  select {
+    font-size: 14px;
+    font-family: var(--font-family-third);
+    width: 100%;
+  }
+  #edit-field-genero{
+    width: 50%;
+  }
+  .form-type-select {
+    flex: 1 1 28%;
+    margin-right: 2%;
+    margin-top: 0.6rem;
+  }
+}

@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\block_content\BlockContentInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Menu\MenuTreeParameters;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ *
+ */
+function chl_becker_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function chl_becker_preprocess_page(&$variables) {
+  $variables['menu_social_links'] = chl_becker_get_items_menu('menu-social-media');
+}
+
+function chl_becker_get_items_menu($name): array
+{
+      $items = [];
+      $tree  = \Drupal::menuTree()->load($name, new MenuTreeParameters());
+      foreach ($tree as $item) {
+        $items[] = array(
+          'title' => $item->link->getTitle(),
+          'url' => $item->link->getUrlObject()->toString()
+        );
+      }
+
+      return $items;
+}
+
+/**
+ * @param $variables
+ * Implements hook_preprocess_status_messages
+ */
+function chl_becker_preprocess_status_messages(&$variables) {
+  $request = \Drupal::request();
+  $is_ajax = $request->isXmlHttpRequest();
+
+  if (!$is_ajax) {
+
+    if (isset($_SESSION['dataLayers']) && !empty($_SESSION['dataLayers'])) {
+      $variables['#attached']['drupalSettings']['ABDataLayers'] = $_SESSION['dataLayers'];
+      unset($_SESSION['dataLayers']);
+    }
+
+    $variables['#cache'] = [
+      'keys' => [
+        ((isset($_SESSION['dataLayers']) && !empty($_SESSION['dataLayers'])) ? 'ab_website_datalayers' : 'ab_website_no_datalayers' ),
+      ],
+    ];
+
+    unset($variables['message_list']);
+
+  }
+}
+

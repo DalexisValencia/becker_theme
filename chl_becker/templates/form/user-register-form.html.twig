@@ -1,0 +1,46 @@
+ <section class="content-ambassador_register lg:pt-16 pb-10 pt-28 text-white">
+    <div class="bg-primary form-ambassador lg:w-2/6 mx-auto pb-8 pt-4 px-6">
+        <div class="flex items-center justify-between mb-4 ml-10 mt-2 uppercase">
+            <a href="#" class="text-xs w-2/6 leading-none">Si ya estás registrado</a>
+            {% if not logged_in %}
+                <a href="/embajadores/login" class="bg-fourth hover:bg-secondary px-4 py-2 shadow-xl text-center text-xs w-1/2"> Inicia sesión</a>
+            {% endif %}
+        </div>
+        <img src="/{{directory}}/front-src/img/line-ambassador.png" class="mx-auto">
+        <h3 class="font-bold leading-none my-4 text-lg tracking-wider">Ingresa tus datos <br>personales para registrarte </h3>
+         
+            <div class="flex flex-wrap space-x-2 box-personal">
+                {{ form.name }}
+                {{ form.field_apellido }}
+            </div>
+            {{ form.field_genero }}
+            {{ form.email }}
+            <label>Ingresa tu fecha de Nacimiento </label>
+            <div class="flex flex-wrap">
+              {{ form.field_fecha_nacimiento }}
+            </div> 
+            <div class="flex flex-wrap">
+                {{ form.password_confirm }}
+            </div>
+
+            <div class="mt-2 mb-2">
+            {{ form.comprar }}
+            </div>
+
+            <div class="mb-2 mt-2">
+            {{ form.cerveza }}
+            </div>
+
+            {{ form.terms_and_conditions }}
+            {{ form.enrollment }}
+
+            {{ form.form_build_id }}
+            {{ form.form_token }}
+            {{ form.form_id }}
+            {{ form.lat }}
+            {{ form.lng }}
+
+
+            {{ form.submit }}
+    </div>
+</section>

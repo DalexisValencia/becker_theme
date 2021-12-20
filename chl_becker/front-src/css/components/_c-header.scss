@@ -1,0 +1,211 @@
+//
+// Component Card
+//
+
+/* .top-banner
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.top-banner-overlay.is-moved::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: 20px;
+}
+
+.top-banner-overlay p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.top-nav li + li {
+  margin-top: 7px;
+}
+
+
+/* HAMBURGER MENU */
+
+.hamburger {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  transition: all 0.25s;
+  margin-top: -2rem;
+  margin-right: 1rem;
+}
+
+.hamburger__top-bun,
+.hamburger__bottom-bun {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 4px;
+  background: var(--color-sixth);
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger:hover [class*='-bun'] {
+  background: var(--color-sixth);
+}
+
+.hamburger__top-bun {
+  transform: translateY(-5px);
+}
+
+.hamburger__bottom-bun {
+  transform: translateY(3px);
+}
+
+.hamburger__top-bun::after {
+  content: '';
+  background:var(--color-sixth);
+  position: absolute;
+  width: 26px;
+  height: 4px;
+  top: -8px;
+  left: 0;
+}
+
+.open {
+  padding-top: 0 !important;
+  transform: rotate(90deg);
+  transform: translateY(-1px);
+
+  .hamburger__top-bun {
+    transform: rotate(45deg) translateY(0px);
+  }
+  span.hamburger__top-bun:after {
+    background: transparent;
+  }
+
+  .hamburger__bottom-bun {
+    transform: rotate(-45deg) translateY(0px);
+  }
+}
+.openm {
+  background: var(--color-primary);
+  text-align: center;
+  top: 0rem !important;
+  height: 100vh;
+  padding-top: 5rem !important;
+  li {
+    display: block !important;
+    font-size: 1.3rem !important;
+    a {
+      color: white;
+      &::before {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.nav-top {
+  .menu-top {
+    li {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.3rem;
+    }
+  }
+  .c-header-menu-user{
+    li{
+      font-size: 0.6rem;
+    }
+  }
+}
+
+li.nav-item.active {
+  border-bottom: 1px solid;
+}
+/* .colores del menu
+    –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.menu-wrapper.is-opened + div {
+  background: var(--color-fourth);
+  transition: background-color 0.5s linear;
+}
+.menu-wrapper.is-opened + div button {
+  display: none;
+}
+.logo-menu{
+  display:block;
+}
+.logo-menu-open{
+  display: none;
+}
+.menu-wrapper.is-opened + div .logo-menu-open {
+  display: block;
+}
+.menu-wrapper.is-opened + div .logo-menu {
+  display: none;
+}
+.text-seventh {
+  color: var(--color-seventh);
+}
+.dropdown {
+  min-width: 180px;
+}
+.dropdown-profile {
+  a {
+    color: #3E1D79 !important;
+  }
+  li:hover {
+    background: #6D5EF4;
+    svg {
+      path {
+        stroke: white;
+      }
+    }
+    a {
+      font-weight: 600;
+      color: white !important;
+    }
+    .logout {
+      background: #6D5EF4;
+    }
+  }
+  .logout {
+    background: #F2F3F2;
+  }
+}
+
+@media (max-width: 768px) {
+  .c-header-menu {
+    position: absolute !important;
+
+    #menu-top {
+      position: absolute;
+      right: 0;
+      li {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #686868;
+      }
+    }
+  }
+  .is-active {
+    font-weight: 700;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .menu.social-media {
+    border-top: 1px solid #686868;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    &:before{
+        content: "SÍGANOS";
+        position: absolute;
+        left: 0;
+        padding: 1.3rem 1rem;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+  }
+}

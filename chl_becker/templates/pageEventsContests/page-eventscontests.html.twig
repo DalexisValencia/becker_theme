@@ -1,0 +1,39 @@
+{# COMPONENTE BANNER PRINCIPAL #}
+<section class="component-banner-principal">
+  {% for item in banner_principal %}
+    <div class="">
+      <img src="{{item.image_desktop}}" alt="{{item.image_desktop_alt}}">
+      <img src="{{item.image_mobile}}" alt="{{item.image_mobile_alt}}">
+      <span>{{item.subtitle}}</span>
+      <h2>{{item.title}}</h2>
+      <p>{{item.text}}</p>
+      <img src="{{item.image_beer_desktop}}" alt="{{image_beer_desktop_alt}}">
+      <img src="{{item.image_beer_mobile}}" alt="{{image_beer_mobile_alt}}">
+    </div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+
+{# COMPONENTE EVENTO #}
+<section class="component-events">
+    {% for item in events %}
+      <div class="event">
+        <img src="{{item.image_desktop}}" alt="{{item.image_desktop_alt}}">
+        <img src="{{item.image_mobile}}" alt="{{item.image_mobile_alt}}">
+        <h2>{{item.title}}</h2>
+        <p>{{item.text}}</p>
+        <a href="{{item.url_link}}" class="">{{item.name_link}}</a>
+      </div>
+    {% endfor %}
+</section>
+{# FIN #}
+
+
+{# COMPONENTE FORMULARIO #}
+<section class="component-form-register lg:px-0">
+  <div class="bg-secondary container lg:pb-16 lg:pt-24 lg:px-16 mx-auto pb-28 pt-24 px-6">
+    {{ drupal_entity('webform', 'form_register') }}
+  </div>
+</section>
+{# FIN #}

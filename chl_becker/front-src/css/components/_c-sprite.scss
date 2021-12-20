@@ -1,0 +1,67 @@
+.character {
+  top: 4rem;
+  overflow: hidden;
+  position: absolute;
+  margin: 4em auto;
+  width: 190px;
+  height: 370px;
+}
+
+.character_spritesheet {
+  height: 370px;
+  position: absolute;
+  max-width: initial;
+}
+
+.pixelart {
+  image-rendering: pixelated;
+}
+
+.play {
+  animation: moveSpritesheet 1.75s steps(25) infinite;
+}
+.play-rev {
+  animation: moveSpritesheetRev 1.75s steps(10) infinite;
+}
+.pause {
+  animation-play-state: paused;
+}
+
+.red-beer {
+  z-index: 1;
+  top: 7rem;
+  width: 400px;
+  left: 27rem;
+}
+
+@keyframes moveSpritesheet {
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes moveSpritesheetRev {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+@media (min-height: 768px) {
+  .character{
+    top: 9rem;
+  }
+  .red-beer {
+    top: 10.25rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .red-beer {
+    top: 12.5rem;
+  }
+}

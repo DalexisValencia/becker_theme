@@ -1,0 +1,123 @@
+.p-profile-edit {
+    @include e(information) {
+        position: absolute;
+        background: #3a3b82;
+        top: 3rem;
+        height: 100%;
+        width: 270px;
+        left: 2rem;
+        color: white;
+        padding: 1rem;
+      }
+      .profile-float {
+        background: #6d5ef4;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        input {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        label {
+            background: #ED5365;
+            font-weight: 500;
+            padding: 0.5rem 2.5rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-family-fourth);
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 0.8584px;
+        }
+        label::after {
+            content: image('icon-edit.svg');
+            padding-left: 0.25rem;
+            position: absolute;
+            top: 0.4rem;
+        }
+      }
+      @include e(information-mobile) {
+        background: #422575;
+        top: 72px;
+      }
+  .form-ambassador {
+      background: #3A3B82;
+    .form-required {
+      &::after {
+        visibility: hidden;
+      }
+    }
+    .password-strength {
+      display: none;
+    }
+    .password-suggestions {
+      display: none !important;
+    }
+    .password-confirm-message {
+      font-size: 12px;
+    }
+    #edit-comprar--wrapper,
+    #edit-cerveza--wrapper {
+      span {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      #edit-comprar,
+      #edit-cerveza {
+        flex: 1 1 50%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+    }
+    input, select {
+        font-size: 14px;
+        font-family: var(--font-family-third);
+    }
+    textarea {
+        background: transparent;
+        border: 1px solid white;
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.25rem;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 21px;
+        font-family: var(--font-family-fourth);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    .form-ambassador {
+      width: 38%;
+    }
+  }
+  @media (max-width: 768px) {
+    .form-ambassador {
+      width: 54%;
+    }
+  }
+  @media (max-width: 640px) {
+    .form-ambassador {
+      width: 100%;
+    }
+  }
+
+  
+}
+
+.-z-1 {
+    z-index: -1;
+}
+.bg-modal-blur {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+}
+.bg-modal-thanks {
+  background: #6D5EF4;
+  
+}

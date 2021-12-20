@@ -1,0 +1,138 @@
+{#
+{% for item in content.field_content_beers %}
+  {% if item.entity %}
+    {% for image in item.entity.field_image_multiple %}
+      <img src="{{ file_url(image.entity.uri.value) }}" alt="{{ image.entity.alt }}">
+    {% endfor  %}
+
+    {{ item.entity.field_title_beer.value }}
+    {{ item.entity.field_sub_title.value }}
+    {{ item.entity.field_price.value }}
+    {{ item.entity.field_price_before.value }}
+
+    {{ item.entity.field_content.value | raw }}
+
+    <a href="{{ item.entity.field_link.uri }}">
+      {{ item.entity.field_link.title }}
+    </a>
+
+    <img src="{{ file_url(item.entity.field_image_center.entity.uri.value) }}" alt="{{ item.entity.field_image_center.entity.alt }}">
+
+  {% endif %}
+
+{% endfor %} #}
+
+{{ attach_library("cenas_virtuales/slick") }}
+<section class="content-04 cl-bg-white lg:cl-pt-4 lg:cl-pt-4 cl-bg-cover">
+  <div class="cl-container cl-mx-auto">
+    {# slider store #}
+    <div class="slider-content04">
+
+      {% for item in content.field_content_beers %}
+        {% if item.entity %}
+
+        <div class="cl-mx-w-lg cl-pb-0 lg:cl-flex">
+
+          <div class="cl-mx-auto md:cl-w-9/12 lg:cl-w-5/12">
+
+            <div class="cl-relative">
+
+             {# brand #}
+              <div class="logo cl-flex cl-items-center cl-justify-between md:cl-hidden ">
+                  <img src="//{{ directory }}/dist/img/tapit-logo.png" alt="logo tapit" title="logo tapit">
+                  <a class="tapit-link cl-font-bold cl-text-black cl-text-xl cl-underline" href="https://tienda.clubcolombia.com.co/" target="_blank"> Tienda </a>
+              </div>
+              {# brand #}
+
+              {# navigation #}
+              <nav class="slider-store__slider cl-flex cl-absolute cl-z-20 cl-bottom-0 cl-pl-10 cl-pb-24">
+                  <a class="slider-store-images__prev cl-cursor-pointer cl-block cl-bg-c3 cl-flex cl-items-center cl-justify-center cl-text-2xl cl-w-10 cl-mr-2 cl-h-12 cl-rounded-none" href="#">
+                    <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjMjQyMTIxIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwtOTUyLjM2MjE4KSI+PHBhdGggc3R5bGU9InRleHQtaW5kZW50OjA7dGV4dC10cmFuc2Zvcm06bm9uZTtkaXJlY3Rpb246bHRyO2Jsb2NrLXByb2dyZXNzaW9uOnRiO2Jhc2VsaW5lLXNoaWZ0OmJhc2VsaW5lO2NvbG9yOiMwMDAwMDA7ZW5hYmxlLWJhY2tncm91bmQ6YWNjdW11bGF0ZTsiIGQ9Im0gMzMuMDA1Njg0LDEwMDIuNDI0NyBhIDUuMDAwNSw1LjAwMDUgMCAwIDAgMS40Mzc1LDMuNDY4NyBsIDIzLjk5OTk2LDI0IGEgNS4wMDQ5ODQ4LDUuMDA0OTg0OCAwIDAgMCA3LjA5MzgsLTcuMDYyNCBsIC0yMC40Njg3NiwtMjAuNDY4OCAyMC40Njg3NiwtMjAuNDY4ODQgYSA1LjAwNDk4NDgsNS4wMDQ5ODQ4IDAgMSAwIC03LjA5MzgsLTcuMDYyNCBsIC0yMy45OTk5NiwyNCBhIDUuMDAwNSw1LjAwMDUgMCAwIDAgLTEuNDM3NSwzLjU5Mzc0IHoiIGZpbGw9IiMyNDIxMjEiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlPSJub25lIiBtYXJrZXI9Im5vbmUiIHZpc2liaWxpdHk9InZpc2libGUiIGRpc3BsYXk9ImlubGluZSIgb3ZlcmZsb3c9InZpc2libGUiPjwvcGF0aD48L2c+PC9zdmc+"  alt="slider-store" title="slider-store" />
+                  </a>
+
+                  <a class="slider-store-images__next cl-cursor-pointer cl-block cl-bg-c3 cl-flex cl-items-center cl-justify-center cl-text-2xl cl-w-10 cl-h-12 cl-rounded-none" href="#">
+                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MDAgNjAwKSBzY2FsZSgtMC42OSAwLjY5KSByb3RhdGUoMCkgdHJhbnNsYXRlKC02MDAgLTYwMCkiIHN0eWxlPSJmaWxsOiMyNDIxMjEiPjxzdmcgZmlsbD0iIzI0MjEyMSIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTk1Mi4zNjIxOCkiPjxwYXRoIHN0eWxlPSJ0ZXh0LWluZGVudDowO3RleHQtdHJhbnNmb3JtOm5vbmU7ZGlyZWN0aW9uOmx0cjtibG9jay1wcm9ncmVzc2lvbjp0YjtiYXNlbGluZS1zaGlmdDpiYXNlbGluZTtjb2xvcjojMDAwMDAwO2VuYWJsZS1iYWNrZ3JvdW5kOmFjY3VtdWxhdGU7IiBkPSJtIDMzLjAwNTY4NCwxMDAyLjQyNDcgYSA1LjAwMDUsNS4wMDA1IDAgMCAwIDEuNDM3NSwzLjQ2ODcgbCAyMy45OTk5NiwyNCBhIDUuMDA0OTg0OCw1LjAwNDk4NDggMCAwIDAgNy4wOTM4LC03LjA2MjQgbCAtMjAuNDY4NzYsLTIwLjQ2ODggMjAuNDY4NzYsLTIwLjQ2ODg0IGEgNS4wMDQ5ODQ4LDUuMDA0OTg0OCAwIDEgMCAtNy4wOTM4LC03LjA2MjQgbCAtMjMuOTk5OTYsMjQgYSA1LjAwMDUsNS4wMDA1IDAgMCAwIC0xLjQzNzUsMy41OTM3NCB6IiBmaWxsPSIjMjQyMTIxIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZT0ibm9uZSIgbWFya2VyPSJub25lIiB2aXNpYmlsaXR5PSJ2aXNpYmxlIiBkaXNwbGF5PSJpbmxpbmUiIG92ZXJmbG93PSJ2aXNpYmxlIj48L3BhdGg+PC9nPjwvc3ZnPjwvZz48L3N2Zz4=" alt="slider-store" title="slider-store"/>
+                </a>
+              </nav>
+              {# navigation #}
+
+
+              {# image slider #}
+              <div class="slider-store-images cl-relative">
+
+                {% for image in item.entity.field_image_multiple %}
+                  <div class="slider-store-image__content">
+                    <img src="{{ file_url(image.entity.uri.value) }}" alt="{{ image.alt }}" title="{{ image.alt }}" />
+                  </div>
+                {% endfor  %}
+
+              </div>
+              {# image slider #}
+            </div>
+          </div>
+
+          <div class="md:cl-w-1/2 cl-mx-auto lg:cl-w-7/12 cl-flex cl-items-center lg:cl-pl-20 xl:cl-pl-40">
+            <div class="cl-mt-8 md:cl-mt-0 cl-max-w-sm cl-text-gray-500">
+
+              <div class="logo cl-text-left cl-mb-4 xl:cl-mb-8 cl-hidden cl-items-center cl-justify-between md:cl-flex">
+                <img src="//{{ directory }}/dist/img/tapit-logo.png" alt="Tapit" title="Tapit">
+                <a class="tapit-link cl-font-bold cl-text-black  cl-text-xl cl-underline" href="https://tienda.clubcolombia.com.co/" target="_blank"> Tienda </a>
+              </div>
+
+              <hgroup class="cl-text-gray-800">
+                <h3 class="cl-font-light cl-text-3xl cl-leading-10 cl-max-w-sm">
+                  {{ item.entity.field_title_beer.value }}
+                </h3>
+                <p class="cl-text-base cl-font-light cl-text-gray-600">
+                  {{ item.entity.field_sub_title.value }}
+                </p>
+              </hgroup>
+              <p class="price cl-text-gray-800 cl-my-8">
+                <b class="cl-block cl-font-bold cl-text-3xl ">
+                  $ {{ item.entity.field_price.value | number_format(0, '.', '.') }}
+                </b>
+                <i class="cl-block cl-font-light cl-text-xl cl-line-through cl-text-blue-300 cl-not-italic">
+                 $ {{ item.entity.field_price_before.value | number_format(0, '.', '.') }}
+                </i>
+              </p>
+
+              {# description #}
+               {{ item.entity.field_content.value | raw }}
+              {# description #}
+
+              {% set uri = item.entity.field_link.uri|split('internal:') %}
+              {% set uri = uri[1] ? uri[1] : uri[0] %}
+
+              <div class="cl-my-8 cl-flex cl-justify-center md:cl-justify-start">
+                <a class="cl-bg-transparent cl-border cl-border-c1 cl-text-center cl-cursor-pointer cl-text-c1 cl-px-8 cl-py-4 cl-w-auto cl-rounded cl-inline-block" href="{{ uri }}">
+                  {{ item.entity.field_link.title }}
+                </a>
+              </div>
+
+              {# cart option #}
+              <div class="cl-flex-col md:cl-flex-row cl-hidden">
+                <div class="select-store">
+                  <label class="cl-text-gray-600 cl-text-xl" for="store-item">Cantidad:</label>
+                  <select class="cl-form-select cl-mt-8 store-item cl-border-0">
+                    <option value="item">1</option>
+                    <option value="item">2</option>
+                    <option value="item">3</option>
+                    <option value="item">4</option>
+                    <option value="item">5</option>
+                  </select>
+                </div>
+              </div>
+              {# cart option #}
+
+            </div>
+          </div>
+        </div>
+
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+    {# slider store #}
+  </div>
+</section>

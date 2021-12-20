@@ -1,0 +1,394 @@
+<div id="agv2" class="d-none cl-text-primary" style="display:none;">
+      {# State 01 / year #}
+      <section id="age-gate-01" class="agv2__container black left-layer active" style="background:url('{{ background_1 }}') #3b3e83" data-mob="{{ background_1_mob }}">
+        <div class="agv2__wrapper">
+          <header>
+            <div class="agv2__brand">
+              <img src="{{logo}}" alt="LOGO" title="LOGO">
+            </div>
+          </header>
+          <div class="form-age">
+            <div class="form-age__header">
+              <p class="agv2__p bold">{{ description_year | raw}}</p>
+            </div>
+
+            {# Year input #}
+            <div class="form-age__content">
+              <div class="year">
+                  <input class="agv2__input" data-qadp="age_gate_year_1" data-type="input-year" data-next="year-02" data-element="year-01" type="tel" pattern="\d*" placeholder="A" maxlength="1">
+                  <input class="agv2__input" data-qadp="age_gate_year_2" data-type="input-year" data-previous="year-01" data-next="year-03" data-element="year-02" type="tel" pattern="\d*" placeholder="A" maxlength="1">
+                  <input class="agv2__input" data-qadp="age_gate_year_3" data-type="input-year" data-previous="year-02" data-next="year-04" data-element="year-03" type="tel" pattern="\d*" placeholder="A" maxlength="1">
+                  <input class="agv2__input" data-qadp="age_gate_year_4" data-type="input-year" data-previous="year-03" data-element="year-04" type="tel" pattern="\d*" placeholder="A" maxlength="1">
+              </div>
+
+            </div>
+
+            <div class="social-media">
+              <ul class="">
+                {% for item in  getMenu("menu-social-media")  %}
+                  {% if item['title'] == "Facebook" %}
+                    <li class="icon-facebook">
+                  {% elseif item['title'] == "Youtube" %}
+                    <li class="icon-youtube">
+                  {% elseif item['title'] == "Instagram" %}
+                    <li class="icon-instagram">
+                  {% elseif item['title'] == "Twitter" %}
+                    <li class="icon-twitter">
+                  {% else %}
+                    <li class="icon-facebook">
+                  {% endif %}
+                  <a href="{{ item['url'] }}">
+                    {{ item['title'] }}
+                  </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {# Year input #}
+
+            {# load legal #}
+            <div class="legal__load">
+            </div>
+            {# load legal #}
+
+          </div>
+        </div>
+        <footer class="bg-fourth">
+          <div class="container lg:flex mx-auto my-10 text-white text-xs">
+              <div class="m-auto lg:m-0 w-2/12">
+                <a href="/">
+                  <img src="/{{ getUrlTheme() }}/front-src/img/lata-roja.svg" alt="logo Becker">{# <img src="/{{ directory }}/front-src/img/lata-roja.svg" alt="logo Becker"> #}
+                </a>
+              </div>
+
+              <div class="">
+
+                <div class="flex">
+                    <div class="w-1/2 lg:block hidden">
+                      <h2>Secciones</h2>
+                      <div class="menu-footer">
+                        {{ drupal_menu('menu-footer') }}
+                      </div>
+                    </div>
+
+                    <div class="m-auto">
+                      <h2 class="hidden lg:block">Siguenos</h2>
+                      <div class="social-media">
+                        {{ drupal_menu('menu-social-media') }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr>
+                  <div class="lg:flex mt-5 px-10 lg:px-0">
+                    <p class="lg:p-0 lg:text-left lg:w-4/12 pb-6 pt-2 text-center" >No comparta este contenido con menores de edad.<br>
+                      © 2021 Cerveza Becker. Todos los derechos reservados.
+                    </p>
+
+                    <p class="lg:w-8/12 lg:text-right text-center">
+                      <a href="https://www.ab-inbev.com/" target="_blank">Anheuser-Busch InBev © 2021   &nbsp;  |  &nbsp;</a>  <a href="https://www.tapintoyourbeer.com" target="_blank">  TAP INTO YOUR BEER  &nbsp;   |  &nbsp; </a>   <a href="https://www.abinbev.cl/contacto" target="_blank"> Contáctenos </a><br>
+
+                      TOMAR BEBIDAS CON MODERACIÓN
+                    </p>
+                </div>
+              </div>
+            </div>
+        </footer>
+      </section>
+      {# State 01 #}
+
+      {# State 02 / month #}
+      <section id="age-gate-02" class="agv2__container white right-layer" style="background-image:url('{{ background_2 }}')" data-mob="{{ background_1_mob }}">
+        <div class="agv2__wrapper">
+          <header>
+            <div class="agv2__brand">
+               <img src="{{logo}}" alt="LOGO" title="LOGO">
+            </div>
+          </header>
+          <div class="form-age">
+            <div class="form-age__header">
+              <p class="agv2__p bold">{{ description_month | raw }}.</p>
+            </div>
+
+            {# Year input #}
+            <div class="form-age__content">
+              <div class="year">
+                  <input class="agv2__input" data-qadp="age_gate_month_1" data-type="input-month" data-next="month-02" data-element="month-01" type="tel" pattern="\d*" placeholder="M" maxlength="1">
+                  <input class="agv2__input" data-qadp="age_gate_month_2" data-type="input-month" data-previous="month-01" data-element="month-02" type="tel" pattern="\d*" placeholder="M" maxlength="1">
+              </div>
+
+              {# back #}
+              <div class="form-age__navigation">
+                <div class="">
+                  <a class="form-age__back" data-back="age-gate-01" data-hidde="age-gate-02" data-focus="year-01" empty-input="input-year" href="#">
+                    <svg width="51" height="16" viewBox="0 0 51 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.792893 7.2929C0.402369 7.68342 0.402369 8.31659 0.792893 8.70711L7.15685 15.0711C7.54738 15.4616 8.18054 15.4616 8.57107 15.0711C8.96159 14.6805 8.96159 14.0474 8.57107 13.6569L2.91421 8L8.57107 2.34315C8.96159 1.95263 8.96159 1.31946 8.57107 0.928936C8.18054 0.538412 7.54738 0.538412 7.15685 0.928936L0.792893 7.2929ZM50.5 7L1.5 7L1.5 9L50.5 9L50.5 7Z" fill="white"/>
+                      </svg>
+                  </a>
+                </div>
+              </div>
+              {# back #}
+
+            </div>
+            <div class="social-media">
+              <ul class="">
+                {% for item in  getMenu("menu-social-media")  %}
+                  {% if item['title'] == "Facebook" %}
+                    <li class="icon-facebook">
+                  {% elseif item['title'] == "Youtube" %}
+                    <li class="icon-youtube">
+                  {% elseif item['title'] == "Instagram" %}
+                    <li class="icon-instagram">
+                  {% elseif item['title'] == "Twitter" %}
+                    <li class="icon-twitter">
+                  {% else %}
+                    <li class="icon-facebook">
+                  {% endif %}
+                  <a href="{{ item['url'] }}">
+                    {{ item['title'] }}
+                  </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {# Year input #}
+
+            {# load legal #}
+            <div class="legal__load">
+            </div>
+            {# load legal #}
+
+
+
+          </div>
+        </div>
+        <footer class="bg-fourth">
+          <div class="container lg:flex mx-auto my-10 text-white text-xs">
+              <div class="m-auto lg:m-0 w-2/12">
+                <a href="/">
+                  <img src="/{{ getUrlTheme() }}/front-src/img/lata-roja.svg" alt="logo Becker"> {# <img src="/{{ directory }}/front-src/img/lata-roja.svg" alt="logo Becker"> #}
+                </a>
+              </div>
+
+              <div class="">
+
+                <div class="flex">
+                    <div class="w-1/2 lg:block hidden">
+                      <h2>Secciones</h2>
+                      <div class="menu-footer">
+                        {{ drupal_menu('menu-footer') }}
+                      </div>
+                    </div>
+
+                    <div class="m-auto">
+                      <h2 class="hidden lg:block">Siguenos</h2>
+                      <div class="social-media">
+                        {{ drupal_menu('menu-social-media') }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr>
+                  <div class="lg:flex mt-5 px-10 lg:px-0">
+                    <p class="lg:p-0 lg:text-left lg:w-4/12 pb-6 pt-2 text-center" >No comparta este contenido con menores de edad.<br>
+                      © 2021 Cerveza Becker. Todos los derechos reservados.
+                    </p>
+
+                    <p class="lg:w-8/12 lg:text-right text-center">
+                      <a href="https://www.ab-inbev.com/" target="_blank">Anheuser-Busch InBev © 2021   &nbsp;  |  &nbsp;</a>  <a href="https://www.tapintoyourbeer.com" target="_blank">  TAP INTO YOUR BEER  &nbsp;   |  &nbsp; </a>   <a href="https://www.abinbev.cl/contacto" target="_blank"> Contáctenos </a><br>
+
+                      TOMAR BEBIDAS CON MODERACIÓN
+                    </p>
+                </div>
+              </div>
+            </div>
+        </footer>
+      </section>
+      {# State 02 #}
+
+      {# State 03 / day #}
+      <section id="age-gate-03" class="agv2__container white right-layer" style="background-image:url('{{ background_3 }}')" data-mob="{{ background_1_mob }}">
+        <div class="agv2__wrapper">
+          <header>
+            <div class="agv2__brand">
+               <img src="{{logo}}" alt="LOGO" title="LOGO">
+            </div>
+          </header>
+          <div class="form-age">
+            <div class="form-age__header">
+              <p class="agv2__p bold">{{ description_day | raw}}</p>
+            </div>
+
+            {# Year input #}
+            <div class="form-age__content">
+              <div class="year">
+                  <input class="agv2__input" data-qadp="age_gate_day_1" data-type="input-day" data-next="day-02" data-element="day-01" type="tel" pattern="\d*" placeholder="D" maxlength="1">
+                  <input class="agv2__input" data-qadp="age_gate_day_2" data-type="input-day" data-previous="day-01" data-element="day-02" type="tel" pattern="\d*" placeholder="D" maxlength="1">
+              </div>
+
+              {# back #}
+              <div class="form-age__navigation">
+                <div class="">
+                  <a class="form-age__back" data-back="age-gate-02" data-hidde="age-gate-03" empty-input="input-month" data-focus="month-01" href="#">
+                    <svg width="51" height="16" viewBox="0 0 51 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.792893 7.2929C0.402369 7.68342 0.402369 8.31659 0.792893 8.70711L7.15685 15.0711C7.54738 15.4616 8.18054 15.4616 8.57107 15.0711C8.96159 14.6805 8.96159 14.0474 8.57107 13.6569L2.91421 8L8.57107 2.34315C8.96159 1.95263 8.96159 1.31946 8.57107 0.928936C8.18054 0.538412 7.54738 0.538412 7.15685 0.928936L0.792893 7.2929ZM50.5 7L1.5 7L1.5 9L50.5 9L50.5 7Z" fill="white"/>
+                      </svg>
+                  </a>
+                </div>
+              </div>
+              {# back #}
+
+            </div>
+            <div class="social-media">
+              <ul class="">
+                {% for item in  getMenu("menu-social-media")  %}
+                  {% if item['title'] == "Facebook" %}
+                    <li class="icon-facebook">
+                  {% elseif item['title'] == "Youtube" %}
+                    <li class="icon-youtube">
+                  {% elseif item['title'] == "Instagram" %}
+                    <li class="icon-instagram">
+                  {% elseif item['title'] == "Twitter" %}
+                    <li class="icon-twitter">
+                  {% else %}
+                    <li class="icon-facebook">
+                  {% endif %}
+                  <a href="{{ item['url'] }}">
+                    {{ item['title'] }}
+                  </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {# Year input #}
+
+             {# load legal #}
+            <div class="legal__load">
+            </div>
+            {# load legal #}
+
+
+
+
+          </div>
+        </div>
+        <footer class="bg-fourth">
+          <div class="container lg:flex mx-auto my-10 text-white text-xs">
+              <div class="m-auto lg:m-0 w-2/12">
+                <a href="/">
+                  <img src="/{{ getUrlTheme() }}/front-src/img/lata-roja.svg" alt="logo Becker">{# <img src="/{{ directory }}/front-src/img/lata-roja.svg" alt="logo Becker"> #}
+                </a>
+              </div>
+
+              <div class="">
+
+                <div class="flex">
+                    <div class="w-1/2 lg:block hidden">
+                      <h2>Secciones</h2>
+                      <div class="menu-footer">
+                        {{ drupal_menu('menu-footer') }}
+                      </div>
+                    </div>
+
+                    <div class="m-auto">
+                      <h2 class="hidden lg:block">Siguenos</h2>
+                      <div class="social-media">
+                        {{ drupal_menu('menu-social-media') }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr>
+                  <div class="lg:flex mt-5 px-10 lg:px-0">
+                    <p class="lg:p-0 lg:text-left lg:w-4/12 pb-6 pt-2 text-center" >No comparta este contenido con menores de edad.<br>
+                      © 2021 Cerveza Becker. Todos los derechos reservados.
+                    </p>
+
+                    <p class="lg:w-8/12 lg:text-right text-center">
+                      <a href="https://www.ab-inbev.com/" target="_blank">Anheuser-Busch InBev © 2021   &nbsp;  |  &nbsp;</a>  <a href="https://www.tapintoyourbeer.com" target="_blank">  TAP INTO YOUR BEER  &nbsp;   |  &nbsp; </a>   <a href="https://www.abinbev.cl/contacto" target="_blank"> Contáctenos </a><br>
+
+                      TOMAR BEBIDAS CON MODERACIÓN
+                    </p>
+                </div>
+              </div>
+            </div>
+        </footer>
+      </section>
+      {# State 03 #}
+            {# legales #}
+             <div class="agegate-legal">
+                <div class="agegate-legal__row">
+
+                    <label class="agv2__checkbox">
+                      <span class="checkbox__input">
+                        <input type="checkbox" name="checkbox" data-element="remember-date">
+                        <span class="checkbox__control">
+                          <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true" focusable="false">
+                            <path fill='none' stroke='currentColor' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59' /></svg>
+                        </span>
+                      </span>
+                      <span class="agv2__label">Recordar mis datos</span>
+                    </label>
+
+                </div>
+                <div class="agegate-legal__row">
+
+                  <p class="agv2__p small">
+                    *No selecciones esta opción si compartes este computador con menores de edad.
+                    <br/>
+                    <br/>
+                    Este sitio web utiliza cookies que se quedarán almacenadas en el computador con el fin de mejorar su experiencia. Al proporcionar su fecha de nacimiento, también se acepta el uso de cookies. Más información haga
+                    <a class="" href="#" target="_blank">clic aquí.</a>
+                  </p>
+                  <div class="agegate__btns">
+                    <a class="agegate__btn main" data-qadp="button_enter_agegate" data-element="ageValidate" href="#">Entrar</a>
+                  </div>
+                </div>
+            </div>
+            {# legales #}
+
+  {# FOOTER #}
+ <div class="hidden">{% include '@chl_becker/footer.html.twig' %}</div>
+</div>
+
+{# example #}
+<div class="agv2-animate" style="display: none">
+  <div class="top-layer"></div>
+  <div class="top-layer top-layer--2"></div>
+  <div class="top-layer top-layer--3"></div>
+  <div class="top-layer top-layer--4"></div>
+  <div class="top-layer top-layer--5"></div>
+  <div class="bottom-layer"></div>
+  <div class="bottom-layer bottom-layer--2"></div>
+  <div class="bottom-layer bottom-layer--3"></div>
+  <div class="left-layer"></div>
+  <div class="left-layer left-layer--2"></div>
+  <div class="left-layer left-layer--3"></div>
+  <div class="left-layer left-layer--4"></div>
+  <div class="right-layer"></div>
+  <div class="right-layer right-layer--2"></div>
+  <div class="right-layer right-layer--3"></div>
+  <div class="buttons">
+    <button id="top"><img src="https://icongr.am/feather/arrow-down.svg" alt="arrow-down" title="arrow-down"></button>
+    <button id="bottom"><img src="https://icongr.am/feather/arrow-up.svg" alt="arrow-up" title="arrow-up"></button>
+    <button id="left"><img src="https://icongr.am/feather/arrow-right.svg" alt="arrow-right" title="arrow-right"></button>
+    <button id="right"><img src="https://icongr.am/feather/arrow-left.svg" alt="arrow-left" title="arrow-left"></button>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+const buttons = document.getElementsByTagName("button");
+
+for (const button of buttons) {
+  button.addEventListener('click', () => {
+     var id = button.getAttribute("id");
+
+     var layerClass = "." + id+ "-layer";
+     var layers = document.querySelectorAll(layerClass);
+     for (const layer of layers) {
+       layer.classList.toggle("active");
+     }
+  });
+}
+</script>

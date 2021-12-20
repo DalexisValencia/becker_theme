@@ -1,0 +1,255 @@
+{# COMPONENTE BANNER PRINCIPAL PROMOCIONES #}
+{# ESTE COMPONENTE TIENE CONDICIONALES DEPENDIENDO
+EL CONTENIDO DE PRODUCTO QUE SE AGREGUE SE MOSTRARA UNO O EL OTRO #}
+<section class="component-banner-principal banner-promotions container mx-auto pt-36 lg:pt-0">
+  {% for item in banner_principal_promotions %}
+    <div class="slider_banner_principal">
+      {% for item_slide in item['slides'] %}
+        <div class="slide_promotions">
+          {% if item_slide.type_product == "products_beer" %}
+          <div class="items-center flex">
+            <div class="pl-8 lg:pl-0 git lg:w-7/12 md:w-7/12 w-4/6 xl:w-5/12 z-20 flex">
+              <div class="text-white">
+               <span data-animation-in="fadeInLeft" class="lg:text-base text-xs">{{ item_slide.subtitle_product }}</span>
+                <h2 data-animation-in="fadeInRight" class="leading-none lg:text-7xl text-3xl">{{ item_slide.name_product }}</h2>
+                  <p data-animation-in="fadeInLeft" class="pt-4 text-xs lg:w-8/12 w-full">{{ item_slide.description_product }}</p>
+
+                  <div class="flex lg:mt-4 mt-6">
+                    <p data-animation-in="fadeInLeft" class="font-secondary leading-6 lg:mr-10 mr-6 text-3xl">{{ item_slide.ibu }}
+                      <span data-animation-in="fadeInRight" class="text-xs uppercase block">ibu</span>
+                    </p>
+                    <p data-animation-in="fadeInLeft" class="font-secondary leading-6 lg:mr-10 mr-6 text-3xl">{{ item_slide.abv }}
+                      <span data-animation-in="fadeInRight" class="text-xs uppercase block">abv</span>
+                    </p>
+                    <p data-animation-in="fadeInLeft" class="font-secondary leading-6 text-3xl">{{ item_slide.cc }}
+                      <span data-animation-in="fadeInRight" class="text-xs uppercase block">cc</span>
+                    </p>
+                  </div>
+                  <a data-animation-in="fadeInUp" href="{{item_slide.url_link}}" class="bg-secondary c-button flex items-center justify-between my-3 px-3 py-2 text-xs uppercase w-36">{{item_slide.name_link}}
+                    <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+                      </svg></span>
+                  </a>
+              </div>
+            </div>
+            <div class="lg:flex">
+              <img data-animation-in="fadeInUp" class="lg:w-11/12 lg:p-20 lg:mt-6 pl-2 pr-5 relative z-10" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+              <!--<img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">-->
+            </div>
+        
+          </div>
+            {% elseif item_slide.type_product == "products_merchandising" %}
+
+              <div class="items-center flex">
+                <div class="pl-8 lg:pl-0 lg:w-7/12 md:w-7/12 w-4/6 xl:w-5/12 z-20 flex">
+                  <div class="text-white">
+                    <span data-animation-in="fadeInLeft" class="lg:text-base text-xs">{{ item_slide.subtitle_product }}</span>
+                    <h2 data-animation-in="fadeInRight" class="leading-none lg:text-7xl text-3xl">{{ item_slide.name_product }}</h2>
+                    <p data-animation-in="fadeInLeft" class="pt-4 text-xs lg:w-8/12 w-full">{{ item_slide.description_product }}</p>
+
+                    <a data-animation-in="fadeInUp" href="{{item_slide.url_link}}" class="bg-secondary c-button flex items-center justify-between my-3 px-3 py-2 text-xs uppercase w-36">{{item_slide.name_link}}
+                      <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+                      </svg></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="lg:flex">
+                  <img data-animation-in="fadeInUp" class="lg:w-11/12 lg:p-20 lg:mt-6 pl-2 pr-5 relative z-10" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+                  <!--<img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">-->
+                </div>
+               
+              </div>
+
+            {% else %}
+
+              <div class="items-center flex">
+                <div class="pl-8 lg:pl-0 lg:w-7/12 md:w-7/12 w-4/6 xl:w-5/12 z-20 flex">
+                  <div class="text-white">
+                    <span data-animation-in="fadeInLeft" class="lg:text-base text-xs">{{ item_slide.subtitle_product }}</span>
+                    <h2 data-animation-in="fadeInRight" class="leading-none lg:text-7xl text-3xl">{{ item_slide.name_product }}</h2>
+                    <p data-animation-in="fadeInLeft" class="pt-4 text-xs lg:w-8/12 w-full">{{ item_slide.description_product }}</p>
+
+                    <a data-animation-in="fadeInUp" href="{{item_slide.url_link}}" class="bg-secondary c-button flex items-center justify-between my-3 px-3 py-2 text-xs uppercase w-36">{{item_slide.name_link}}
+                      <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+                      </svg></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="lg:flex">
+                  <img data-animation-in="bounceInLeft" class="lg:w-11/12 lg:p-20 lg:mt-6 pl-2 pr-5 relative z-10" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+                  <!--<img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">-->
+                </div>
+            
+              </div>
+
+            {% endif %}
+
+
+
+        </div>
+        {% endfor %}
+      </div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+
+
+{# COMPONENTE BANNER SECUNDARIO PROMOCIONES #}
+{# ESTE COMPONENTE TIENE CONDICIONALES DEPENDIENDO
+EL CONTENIDO DE PRODUCTO QUE SE AGREGUE SE MOSTRARA UNO O EL OTRO #}
+<section class="component-banner-secundary-promotions">
+  <h2 class="lg:text-3xl my-12 px-4 text-white text-xl">Nuestras Favoritas</h2>
+  {% for item in banner_secundary_promotions %}
+    <div class="slider_banner_secundary_promotions slider_banner_novelties">
+      {% for item_slide in item['slides'] %}
+        <div data-aos-duration="1000" data-aos="fade-down-right" class="slide_promotion">
+          {% if item_slide.type_product == "products_beer" %}
+          <div class="flex text-white pt-12">
+            <div class="w-7/12 lg:left-28  left-5 relative z-10 py-5">
+              <span class="lg:py-3 pt-1.5 text-xs">{{ item_slide.subtitle_product }}</span>
+              <h3 class="leading-none"> {{ item_slide.name_product }}</h3>
+              <p class="font-third py-3 text-xs">{{ item_slide.description_product }}</p>
+              <a href="{{item_slide.url_link}}" class="bg-secondary c-button flex items-center justify-between my-3 px-3 py-2 text-xs uppercase w-36">{{item_slide.name_link}}
+                <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+                  </svg></span>
+              </a>
+            </div>
+              <div class="lg:w-9/12 bg-fourth lg:pr-48 pr-40 relative">
+                <img class="lg:-top-10 -top-6 absolute lg:right-10 right-5 lg:w-5/12 w-9/12" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+                <!--  <img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">-->
+            </div>
+          </div>
+          {% elseif item_slide.type_product == "products_merchandising" %}
+
+            <img src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+            <img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">
+            {{ item_slide.subtitle_product }}
+            {{ item_slide.name_product }}
+            {{ item_slide.description_product }}
+            <a href="{{item_slide.url_link}}" class="">{{item_slide.name_link}}</a>
+
+          {% else %}
+
+            <img src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+            <img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">
+            {{ item_slide.subtitle_product }}
+            {{ item_slide.name_product }}
+            {{ item_slide.description_product }}
+            <a href="{{item_slide.url_link}}" class="">{{item_slide.name_link}}</a>
+
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>
+{# FIN #}
+
+
+
+{# COMPONENTE BANNER SECUNDARIO PROMOCIONES #}
+<section class="component-store-varieties-product component-products">
+  <div class="container mx-auto pt-12">
+      <h2 class="lg:text-3xl my-12 px-4 color-primary text-xl">Variedades</h2>
+      {% for item in varieties_products %}
+        <div class="slider_store_banner_varieties slider_banner_productos">
+          {% for item_slide in item['slides'] %}
+          <div data-aos-duration="1000" data-aos="fade-up-left" class="mx-4 text-white box-hover">
+            <div class="products px-4 pb-4">
+              <img class="m-auto pb-2 w-10/12 lg:w-auto" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+              <!--<img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">-->
+            <div class="h-24 overflow-auto">
+              <h2 class="leading-none pb-2 pt-3">{{ item_slide.name_product }} <span class="text-xs">{{ item_slide.cc }} CC</span></h2>
+              <p class="font-third leading-3 text-xs"> {{ item_slide.description_product }}</p>
+            </div>
+              <!-- <span>{{ item_slide.ibu }} IBU</span>
+              <span>{{ item_slide.abv }} ABV</span>-->
+            </div>
+            <a href="{{item_slide.url_link}}" class="bg-primary text-white c-button flex items-center justify-between px-3 py-4 text-xs uppercase ">{{item_slide.name_link}}
+              <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+                </svg></span>
+            </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+ </div>
+</section>
+{# FIN #}
+
+
+{# COMPONENTE MERCHANDIDING PRODUCTOS #}
+<section class="component-store-merchandising-products component-products" style="padding-bottom: 45px;">
+  <div class="container mx-auto pt-1">
+  <h2 class="lg:text-3xl my-12 px-4 color-primary text-xl">Merchandising</h2>
+  {% for item in merchandising_products %}
+    <div class="slider_store_banner_varieties slider_banner_productos">
+      {% for item_slide in item['slides'] %}
+        <div data-aos-duration="1000" data-aos="fade-up-right" class="mx-4 text-white box-hover">
+            <div class="products px-4 pb-4">
+                <img class="m-auto pb-2 w-10/12 lg:w-auto" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+                <!--<img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">-->
+              <div class="h-24 overflow-auto">
+                <h2 class="leading-none pb-2 pt-3"> {{ item_slide.name_product }}</h2>
+                 <p class="font-third leading-3 text-xs">  {{ item_slide.description_product }}</p>
+              </div>
+            </div>
+          <a href="{{item_slide.url_link}}" class="bg-primary text-white c-button flex items-center justify-between px-3 py-4 text-xs uppercase">{{item_slide.name_link}}
+            <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+              </svg></span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+  </div>
+</section>
+{# FIN #}
+
+
+{# COMPONENTE OTROS PRODUCTOS #}
+<section class="component-store-others-products component-products">
+  <div class="container mx-auto pt-1">
+  <h2 class="lg:text-3xl my-12 px-4 color-primary text-xl" style="display:none">Otros Productos</h2>
+  {% for item in others_products %}
+    <div class="slider_store_banner_varieties slider_banner_productos">
+      {% for item_slide in item['slides'] %}
+      <div data-aos-duration="1000" data-aos="fade-up-left" class="mx-4 text-white box-hover">
+          <div class="products px-4 pb-4">
+            <img class="m-auto pb-2 w-10/12 lg:w-auto" src="{{item_slide.image_desktop}}" alt="{{item_slide.image_desktop_alt}}">
+          <!---<img src="{{item_slide.image_mobile}}" alt="{{item_slide.image_mobile_alt}}">-->
+        <div class="h-24 overflow-auto"> 
+          <h2 class="leading-none pb-2 pt-3"> {{ item_slide.name_product }}</h2>
+          <p class="font-third leading-3 text-xs"> {{ item_slide.description_product }}</p>
+        </div>
+        
+        </div>
+
+          <a href="{{item_slide.url_link}}" class="bg-primary text-white c-button flex items-center justify-between px-3 py-4 text-xs uppercase ">{{item_slide.name_link}}
+            <span class=""><svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.6 0V1.9H14.931L0 17.6605L1.269 19L16.2 3.2395V15.2H18V0H3.6Z" fill="white"/>
+              </svg></span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+  </div>
+</section>
+{# FIN #}
+
+
+{# COMPONENTE FORMULARIO #}
+<section class="component-form-register lg:px-0">
+  <div class="bg-secondary container lg:pb-16 lg:pt-24 lg:px-16 mx-auto pb-28 pt-24 px-6">
+  {{ drupal_entity('webform', 'form_register') }}
+ </div>
+</section>
+{# FIN #}
+

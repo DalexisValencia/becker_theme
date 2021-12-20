@@ -1,0 +1,128 @@
+.p-profile {
+  .banner-promo-background {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #141316 89.81%);
+  }
+  @include e(information) {
+    position: absolute;
+    background: #3a3b82;
+    top: 3rem;
+    height: 100%;
+    width: 270px;
+    @media (width:1024px) {
+      left: 0;
+    }
+    left: 2rem;
+    color: white;
+    padding: 1rem;
+  }
+  .profile-float {
+    background: #6d5ef4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .show-more {
+    font-weight: 500;
+    line-height: 22px;
+  }
+  .show-more::after {
+    content: image('show-more-arrow.svg');
+    padding-left: 0.5rem;
+  }
+  @include e(information-mobile) {
+    background: #422575;
+    top: 72px;
+  }
+  @include e(challenges) {
+    .card-challenge {
+        width: 270px;
+        @media (min-width: 300px){
+          width: 285px;
+        }
+        @media(max-width: 425px) {
+          height: 330px;
+        }
+        h3 {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* number of lines to show */
+          -webkit-box-orient: vertical;
+        }
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* number of lines to show */
+          -webkit-box-orient: vertical;
+        }
+    }
+    .available {
+      // background: #ed5365;
+      background-image: image('bg-available.png');
+      background-size: cover;
+    }
+    .available-2 {
+      // background: #6d5ef4;
+      background-image: image('bg-disable1.png');
+      background-size: cover;
+    }
+    .available-3 {
+      // background: #3a3b82;
+      background-image: image('bg-disable2.png');
+      background-size: cover;
+    }
+
+    .bg-color-disable1{
+      background: #3A3B82;
+    }
+    .bg-color-disable2{
+      background: #6D5EF4;
+    }
+
+    .bg-color-btn-available{
+      background: #6D5EF4;
+    }
+    .bg-color-btn-disable{
+      background: #ed5365;
+    }
+  
+    .btn-view {
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      box-sizing: border-box;
+      box-shadow: 0px 4.93897px 9.87795px rgba(54, 123, 245, 0.24);
+    }
+    @media (min-width: 1024px) {
+      .card-challenge {
+        width: 330px;
+        height: 367px;
+      }
+      .carousel {
+        width: fit-content;
+      }
+    }
+    @media (min-width: 1136px) {
+      padding: 1rem;
+      .card-challenge {
+          width: 340px;
+      }
+    }
+    @media (min-width: 1360px) {
+      .card-challenge {
+          width: 400px;
+          height: 450px;
+      }
+    }
+    @media (min-width: 1920px) {
+      .carousel {
+        max-width:75%;
+      }
+    }
+  }
+  .slick-list {
+    padding: 0 !important;
+    margin-left: 1rem;
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+}

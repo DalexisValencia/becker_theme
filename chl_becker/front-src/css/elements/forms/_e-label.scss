@@ -1,0 +1,80 @@
+//
+// Element Label
+//
+
+.form-control-label {
+  @extend .type-sm;
+}
+
+.error {
+  color: #ffbc00;
+  font-size: 12px !important;
+  font-weight: normal !important;
+}
+
+label#terms_and_conditions-error::before {
+  display: none;
+}
+
+.form-item-birthdate label {
+  display: block;
+  line-height: 1;
+  font-size: 0.6rem;
+}
+
+.form-ambassador {
+  label {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    position: relative;
+    top: 7px;
+  }
+  ::placeholder {
+    font-size: 14px;
+    font-family: var(--font-family-third);
+    color: white;
+  }
+  .box-personal {
+    .js-form-item {
+      flex: 1 1 45%;
+    }
+  }
+
+  .form-item-field-genero {
+    label {
+      top: 5px;
+    }
+  }
+
+  .form-item-terms-and-conditions,
+  .form-item-enrollment {
+    label {
+      font-size: 12px !important;
+    }
+  }
+}
+@media (max-width: 767px) {
+  /* label#edit-name-error {
+    top: 0 !important;
+    margin-left: 0rem;
+  }
+  label#edit-field-apellido-error {
+    top: 0 !important;
+    margin-left: 0rem;
+  } */
+  label.error {
+    margin-bottom: 0.5rem;
+    //top: 0 !important;
+    line-height: 1.2;
+    margin-left: 0rem;
+    display: block;
+  }
+  /* label#terms_and_conditions-error {
+    position: initial;
+    margin-top: 0;
+  } */
+  #terms_and_conditions-error {
+    margin-top: 0.25rem;
+  }
+}

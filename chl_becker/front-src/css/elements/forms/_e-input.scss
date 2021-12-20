@@ -1,0 +1,260 @@
+//
+// Element Input
+//
+
+%input {
+  @extend %control;
+}
+
+input {
+  @extend %input;
+  background: transparent;
+  border-bottom: 1px solid white;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0;
+  width: 100%;
+}
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+input[type='checkbox']:checked + label:before {
+  background: transparent;
+  color: white;
+}
+
+input[type='checkbox']:checked + label:after {
+  transform: scale(1);
+}
+input[type='checkbox'] + label:after {
+  transform: scale(0);
+}
+input[type='checkbox'] + label::after {
+  /* content: '✔'; */
+  /* color: white !important;
+  -webkit-text-fill-color: white !important;
+  line-height: 1.2;
+  text-align: center; */
+  width: 0.75rem;
+  top: 0.25rem;
+  margin-left: 0.063rem;
+  content: image('icon-check.svg');
+}
+.form-check {
+  position: relative;
+  margin-right: 2%;
+  flex: 1 1 28%;
+
+  label {
+    font-weight: 100 !important;
+    font-family: var(--font-family-third) !important;
+    padding-left: 1.3rem;
+    padding-top: 0.2rem;
+    display: block;
+    &:before {
+      content: ' ';
+      border: 1px solid white !important;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      display: block;
+      width: 1em;
+      height: 1em;
+      font-size: 0.8rem;
+    }
+    &::after {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      display: block;
+      width: 1em;
+      height: 1em;
+      font-size: 0.8rem;
+    }
+  }
+}
+.ch-becker-register-form,
+.user-login-custom-form {
+  input {
+    font-size: 14px;
+  }
+}
+.webform-submission-form {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+
+  .js-form-item-name {
+    display: block;
+    float: left;
+    width: 45%;
+    input {
+      width: 100%;
+    }
+  }
+  .js-form-type-email {
+    float: right;
+    display: block;
+    width: 45%;
+    input {
+      width: 100%;
+    }
+  }
+  .form-item-terms-and-conditions label,
+  .form-item-policies-and-privacy label {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 2.5em;
+    height: 1.5em;
+    line-height: 1.5;
+    cursor: pointer;
+    font-size: 0.6rem;
+    font-family: var(--font-family-third);
+  }
+  .form-item-birthdate {
+    width: 56% !important;
+    float: left;
+    margin-top: 1rem;
+  }
+  .form-item-question {
+    width: 44% !important;
+    float: right;
+    margin-top: 1.8rem;
+  }
+  .form-item-birthdate-day,
+  .form-item-birthdate-month,
+  .form-item-birthdate-year {
+    width: 30%;
+  }
+
+  .form-item-terms-and-conditions {
+    width: 65%;
+  }
+  .js-form-type-checkbox label:before,
+  .form-item-terms-and-conditions label:before,
+  .form-item-policies-and-privacy label:before {
+    content: ' ';
+    border: 1px solid white !important;
+  }
+
+  .js-form-type-checkbox label:before,
+  .js-form-type-checkbox label:after,
+  .form-item-terms-and-conditions label:after,
+  .form-item-policies-and-privacy label:after,
+  .form-item-terms-and-conditions label:before,
+  .form-item-policies-and-privacy label:before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    display: block;
+    width: 1em;
+    height: 1em;
+    font-size: 0.8rem;
+  }
+
+  input#edit-actions-submit{
+    background-image: image('ico-arrow-btn.svg');
+    background-color: var(--color-primary);
+    background-repeat: no-repeat;
+    background-position: 90% 54%;
+    border: none;
+    color: white;
+    text-align: left;
+    position: absolute;
+    right: 0;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    width: 180px;
+    cursor: pointer;
+    margin-top: -2rem;
+
+    &:hover {
+      background-color: var(--color-fourth);
+    }
+  }
+  .form-item-terms-and-conditions {
+    label {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.form-submit {
+  background: var(--color-secondary);
+  border: none;
+  margin-top: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+    var(--tw-shadow);
+  box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), var(--tw-shadow);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  cursor: pointer;
+  &:hover {
+    background: var(--color-fourth);
+  }
+}
+
+// input#btn-form-change-video:hover{
+//   background: #ed5365 !important;
+// }
+
+.no-hover:hover{
+  
+    background: #ed5365 !important;
+  
+}
+
+input#edit-field-nombre {
+  width: 90%;
+}
+@media (max-width: 767px) {
+  .component-form-register .js-form-item {
+    width: 100% !important;
+  }
+  #edit-name {
+    width: 100% !important;
+    float: none !important;
+  }
+  .webform-submission-form {
+    width: 90%;
+  }
+  #edit-e-mail {
+    width: 100% !important;
+    float: none !important;
+    margin-top: 2rem !important;
+  }
+  .form-item-question {
+    width: 100% !important;
+    float: none;
+  }
+  .form-item-birthdate {
+    width: 100% !important;
+    float: none !important;
+    padding-top: 2rem !important;
+  }
+
+  input#edit-actions-submit {
+    margin-top: 1rem !important;
+  }
+  .component-form-register .js-form-item {
+    font-size: 0.8rem !important;
+  }
+  .form-item-question select {
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+  }
+  /* .form-item-terms-and-conditions {
+    margin-top: 4.6rem;
+  } */
+}

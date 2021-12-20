@@ -1,0 +1,63 @@
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: var(--font-icomoon);
+  speak: never;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    font-size: 0;
+    &:before {
+      color: var(--color-white);
+      content: '';
+      display: block;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.icon-facebook {
+  a {
+    &:before {
+      content: '\ea90';
+    }
+  }
+}
+.icon-instagram {
+  a {
+    &:before {
+      content: '\ea92';
+    }
+  }
+}
+.icon-whatsapp {
+  a {
+    &:before {
+      content: '\ea93';
+    }
+  }
+}
+.icon-telegram {
+  a {
+    &:before {
+      content: '\ea95';
+    }
+  }
+}
+.icon-twitter {
+  a {
+    &:before {
+      content: '\ea96';
+    }
+  }
+}
+.icon-youtube {
+  a {
+    &:before {
+      content: '\ea9d';
+    }
+  }
+}

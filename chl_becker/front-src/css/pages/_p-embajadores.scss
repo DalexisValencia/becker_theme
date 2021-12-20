@@ -1,0 +1,147 @@
+//
+// Pages Embajadores
+//
+.path-embajadores {
+    .content-ambassador_register {
+        background-image: image('bg-form_embajadores-2021.jpg');
+        background-size: cover;
+        background-position: center 60px;
+    }
+    .component-steps {
+        background: -moz-linear-gradient( top, rgba(255, 255, 255, 1) 88%, rgba(255, 255, 255, 1) 88%, rgba(58, 59, 130, 1) 88%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient( top, rgba(255, 255, 255, 1) 88%, rgba(255, 255, 255, 1) 88%, rgba(58, 59, 130, 1) 88%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient( to bottom, rgba(255, 255, 255, 1) 88%, rgba(255, 255, 255, 1) 88%, rgba(58, 59, 130, 1) 88%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#3a3b82',GradientType=0 ); /* IE6-9 */
+    }
+    .form-ambassador {
+        .form-required {
+            &::after {
+                visibility: hidden;
+            }
+        }
+        .password-strength {
+            display: none;
+        }
+        .password-suggestions {
+            display: none !important;
+        }
+        .password-confirm-message {
+            font-size: 12px;
+        }
+        #edit-comprar--wrapper,
+        #edit-cerveza--wrapper {
+            span {
+                font-size: 14px;
+                line-height: 10px;
+                font-weight: 700;
+                letter-spacing: -0.7px;
+            }
+            #edit-comprar {
+                flex: 1 1 50%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 0.5rem;
+                line-height: 1.3;
+            }
+            #edit-cerveza {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin-bottom: 0.5rem;
+                line-height: 1.3;
+            }
+        }
+    }
+    @media (max-width: 1280px) {
+        .form-ambassador {
+            width: 38%;
+        }
+    }
+    @media (max-width: 768px) {
+        .form-ambassador {
+            width: 54%;
+        }
+        svg.circle-video {
+            width: 80px;
+        }
+    }
+    @media (max-width: 640px) {
+        .content-ambassador_register {
+            background-image: image('bg-form_embajadores-2021-sm.jpg');
+        }
+        .form-ambassador {
+            width: 100%;
+        }
+    }
+}
+
+// thank-you
+
+/* .content-ambassador_thank-you {
+  background-image: image('bg-thank_you-mobile.jpg');
+  @media (min-width: 767px) {
+    background-image: image('bg-thank_you_embajadores-2021.jpg');
+  }
+  background-size: cover;
+  background-position: center 60px;
+} */
+
+// thank-you-password
+.content-ambassador_thank-you-pass {
+    background-image: image('bg-thank_you-mobile.jpg');
+    @media (min-width: 767px) {
+        background-image: image('bg-thank_you_password-2021.jpg');
+    }
+    background-size: cover;
+    background-position: center 60px;
+}
+
+.becker-text-title {
+    font-size: 24px;
+}
+
+.text-xxs {
+    @apply font-fourth;
+    font-size: 9px;
+    font-weight: 400;
+}
+
+.container-video-top {
+    top: 9rem;
+    right: 6rem;
+    height: 500px;
+    width: 300px;
+    .section-information-video {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 0.5rem 0.75rem;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #3a3b82 74.48%);
+        h3 {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        p {
+            font-size: 12px;
+            margin: 0 0 0.25rem;
+        }
+        .mb-1\/2 {
+            margin-bottom: 0.15rem;
+        }
+        .time-public::before {
+            content: image('icon-calendar.svg');
+            padding-right: 0.25rem;
+        }
+        .views::before {
+            content: image('icon-eye.svg');
+            padding-right: 0.25rem;
+        }
+    }
+}
+
+.h-screen-embajadores {
+    height: 80vh;
+}
