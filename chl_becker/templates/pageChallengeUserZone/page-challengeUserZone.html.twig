@@ -1,0 +1,73 @@
+{# COMPONENTE PROFILE HEADER #}
+<section class="component-profile-area px-4">
+    <div class="component-max-width flex justify-between items-center">
+        <aside class="component-profile-area--aside">
+            <header class="component-profile-area--header">
+                <div class="component-profile-area--user">
+                    <div class="component-profile-area--avatar">
+                        <picture>
+                            <source media="(min-width:690px)" srcset="/{{ directory }}/front-src/img/userZone/circle-avatar.png">
+                            <img src="/{{ directory }}/front-src/img/userZone/circle-avatar.png" alt="">
+                        </picture>
+                        <div class="component-profile-area--user-details">
+                            <h2 class="component-profile-area--user-name"> @nickname_usuario </h2>
+                            <p class="component-profile-area--user-description">
+                                Soy una persona soñador aque me encanta la cocina y tomarme una buena becker al atardecer
+                            </p>
+                        </div>
+                        <div class="component-profile-area--gamerules">
+                            <p class="component-profile-area--gamerules-label">
+                                Reglas <br> del juego
+                            </p>
+                            <span class="info-icon"></icon>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </aside>
+
+        <section class="component-counter py-4">
+            <header class="component-counter--header px-5">
+                <h2 class="component-counter--title text-center">YA PUEDES VOTAR POR TU FAVORITO</h2>
+
+                <p class="component-counter--copy my-3 text-center">
+                    Sigue los siguentes pasos y participa por <br> un año de cerveza gratis
+                </p>
+
+                <div class="component-counter--steps flex justify-center items-center">
+                    <div class="step flex pr-3">
+                        <span class="step-id mr-1">1</span>
+                        <a class="flex justify-between bg-fourth items-center i-want-vote register py-1 px-4 border-0 float-left focus:outline-none outline-none text-white mx-1">
+                            Regístrate
+                        </a>
+                        <a class="flex justify-between items-center i-want-vote bg-none py-1 px-4 border-0 float-left focus:outline-none outline text-white mx-1">
+                            Iniciar Sesión
+                        </a>
+                    </div>
+
+                    <div class="step flex mr-1 items-center">
+                        <span class="step-id ml-3">2</span>
+                        <span class="text-center text-white ml-2">
+                            Vota por tu  <span class="block">favorito</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="component-counter--copy text-center text-white px-4 mt-4">
+                    *Válido para ciudades dentro del rango de la zona de despacho
+                </div>
+            </header>
+
+            <div class="component-profile-area--username">
+                <h2 class="component-profile-area--username-nickname color-white text-center">
+                    @nickname_usuario
+                </h2>
+
+                <button data-aos-offset="-300" data-aos-duration="1500" data-aos="fade-right" class="bg-fourth flex justify-center items-center btn-vote p-3 mt-2 border-0 float-left focus:outline-none outline-none text-center">
+                    VOTE
+                </button>
+            </div>
+        </section>
+    </div>
+</section>
+{# FIN #}

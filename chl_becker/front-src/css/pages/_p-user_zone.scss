@@ -1,0 +1,42 @@
+.component-profile-area {
+    min-height: 500px;
+    background-color: var(--color-primary);
+    margin-top: 60px;
+    border: 1px solid white;
+}
+
+.component-max-width{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0px auto;
+}
+
+.component-profile-area--aside {
+    border: 1px dashed red;
+}
+
+.component-profile-area--user {
+    width: 100%;
+    max-width: 270px;
+}
+
+.component-profile-area--username{
+    .component-profile-area--username-nickname {
+        font: {
+            family: var(--font-family-primary);
+            size: 26px;
+            weight: normal;
+        }
+    }
+    .btn-vote {
+        width: 100%;
+        max-width: 300px;
+        margin: 0px auto;
+        font: {
+            family: var(--font-family-primary);
+            size: 21px;
+            weight: 500;
+        }
+    }
+}
+
