@@ -266,6 +266,65 @@ console.log(window.innerWidth < 1366 ? 1024 : window.innerWidth < 1440 ? 1366 : 
       .slickAnimation();
   }
 
+  function createSlickSliderPosts($slick, $arrowComponent) {
+    $slick
+      .slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        // appendArrows: $arrowComponent "",
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1980,
+            settings: {
+              appendArrows: $arrowComponent,
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              arrows: true,
+              initialSlide: 0,
+            }
+          },
+          {
+            breakpoint: 960,
+            settings: {
+              appendArrows: $arrowComponent,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              arrows: true,
+              initialSlide: 0,
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              appendArrows: $arrowComponent,
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              arrows: true,
+              initialSlide: 0,
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1.5,
+              slidesToScroll: 1,
+              arrows: false,
+              initialSlide: 0,
+              centerMode: true,
+              centerPadding: '20%',
+              infinite: false,
+            }
+          }
+        ]
+      })
+      .slickAnimation();
+  }
+
   // Slick slider home banner
   if ($('.slider_banner_principal').length > 0) {
     slickSliderInit($('.slider_banner_principal'));
@@ -293,6 +352,15 @@ console.log(window.innerWidth < 1366 ? 1024 : window.innerWidth < 1440 ? 1366 : 
   // Slick slider productos
   if ($('.slider_banner_varieties').length > 0) {
     slickSlidervarieties($('.slider_banner_varieties'));
+  }
+  // Slick Slider posts (10 featured) page voting
+  if ($('.component-top-ten-posters--wrapper-posts').length > 0) {
+    createSlickSliderPosts($('.component-top-ten-posters--wrapper-posts'), $(".component-posts--arrow-navigation"));
+  }
+
+  // Slick Slider posts page voting
+  if ($('.component-more-posts--postsList').length > 0) {
+    createSlickSliderPosts($('.component-more-posts--postsList'), $(".component-posts--arrow-navigation-"));
   }
 
   // cerrar teclado en mobile

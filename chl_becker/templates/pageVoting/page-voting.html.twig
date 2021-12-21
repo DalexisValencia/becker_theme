@@ -1,0 +1,136 @@
+{# 'RETOS' MAIN BANNER #}
+<section class="component-banner-challenges">
+  <picture>
+    <source media="(min-width:690px)" srcset="/{{ directory }}/front-src/img/challenges/banner-challenges-desktop.png">
+    <img src="/{{ directory }}/front-src/img/challenges/banner-challenges-mobile.png" alt="">
+  </picture>
+
+  <header class="component-banner-challenges--header ml-10">
+    <h1 data-aos-duration="1000" data-aos="fade-left" class="component-banner-challenges--header-title">
+      RETOS
+    </h1>
+    <p data-aos-duration="1000" data-aos="fade-right" class="component-banner-challenges--header-description">
+      ¡Vota por tu favorito y participa por <br>
+      un año de cerveza gratis!
+    </p>
+    <button data-aos-duration="1500" data-aos="fade-right" class="flex justify-between items-center i-want-vote bg-secondary p-3 mt-2 border-0 float-left focus:outline-none outline-none text-white">
+      QUIERO VOTAR  <span class="ml-1">
+      <svg width="18" height="18" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+          <path d="M19 0V7.5H66.2125L4 69.7125L9.2875 75L71.5 12.7875V60H79V0H19Z" fill="white"/>
+        </g>
+        <defs>
+          <filter id="filter0_d" x="0" y="0" width="83" height="83" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+          </filter>
+        </defs>
+      </svg>
+      </span>
+    </button>
+  </header>
+</section>
+{# FIN #}
+
+
+{# COUNTER #}
+<section class="component-counter py-4">
+  <header class="component-counter--header px-5">
+    <h2 class="component-counter--title text-center">VOTACIONES</h2>
+    <p class="component-counter--subtitle text-center">terminan en</p>
+    <div class="component-counter--wrapper flex justify-center items-center mt-3 leading-6">
+      <div class="component-counter--item day mx-2" id="day">
+        <span class="component-counter--label">Days</span>
+        <div  class="component-counter--counting">40</div>
+      </div>
+
+      <div class="component-counter--item hour mx-2" id="hours">
+        <span class="component-counter--label">hour</span>
+        <div  class="component-counter--counting">00</div>
+      </div>
+
+      <div class="component-counter--item minutes mx-2" id="minutes">
+        <span class="component-counter--label">mins</span>
+        <div  class="component-counter--counting">00</div>
+      </div>
+
+      <div class="component-counter--item minutes mx-2" id="seconds">
+        <span class="component-counter--label">secs</span>
+        <div  class="component-counter--counting">00</div>
+      </div>
+    </div>
+    <p class="component-counter--copy my-3 text-center">Sigue los siguentes pasos y participa por un año de cerveza gratis.</p>
+
+    <div class="component-counter--steps flex justify-center items-center">
+      <div class="step flex pr-3">
+          <span class="step-id mr-1">1</span>
+          <a class="flex justify-between bg-fourth items-center i-want-vote register py-1 px-4 border-0 float-left focus:outline-none outline-none text-white mx-1">
+            Regístrate
+          </a>
+          <a class="flex justify-between items-center i-want-vote bg-none py-1 px-4 border-0 float-left focus:outline-none outline text-white mx-1">
+            Iniciar Sesión
+          </a>
+      </div>
+
+      <div class="step flex mr-1 items-center">
+          <span class="step-id ml-3">2</span>
+          <span class="text-center text-white ml-2">
+            Vota por tu  <span class="block">favorito</span>
+          </span>
+      </div>
+    </div>
+
+    <div class="component-counter--copy text-center text-white px-4 mt-4">
+      *Válido para ciudades dentro del rango de la zona de despacho
+    </div>
+  </header>
+</section>
+{# FIN #}
+
+{# TOP TEN POSTERS #}
+<section class="component-top-ten-posts px-2 py-3">
+  <div class="component-top-ten-posts--wrapper py-4 px-4 my-2">
+    <header class="component-top-ten-posts--header flex justify-between items-center mb-3">
+        <h2 class="component-top-ten-posts--header-title">
+          Los 10 primeros
+        </h2>
+        <div class="component-posts--arrow-navigation flex"></div>
+    </header>
+    
+    <div class="component-top-ten-posters--wrapper-posts">
+      {% for i in 0..10 %}
+        {% include '@chl_becker/pageVoting/post-card.html.twig' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{# FIN #}
+
+{# TOP MORE POSTS #}
+<section class="component-more-posts px-2 py-3 mb-3">
+  <div class="component-more-posts--wrapper py-4 px-4 my-2">
+    <header data-aos-duration="1000" data-aos="fade-left" class="component-more-posts--header">
+      <h2 class="component-more-posts--header-title">Otros</h2>
+    </header>
+
+    <div class="component-more-posts--postsList mt-4">
+      {% for i in 0..6 %}
+        {% include '@chl_becker/pageVoting/post-card.html.twig' %}
+      {% endfor %}
+    </div>
+
+    <div class="component-loadmore px-3 pb-4 flex justify-center item-center">
+      <button data-aos-offset="-300" data-aos-duration="1500" data-aos="fade-right" class="flex justify-center items-center load-more-posts p-3 mt-2 border-0 float-left focus:outline-none outline-none text-center">
+        Cargar más <span class="arrow-more mx-2"></span>
+      </button>
+    </div>
+
+    <section>
+  </div>
+</section>
+{# FIN #}

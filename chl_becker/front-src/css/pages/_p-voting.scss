@@ -36,6 +36,9 @@
                 weight: 700;
             }
         }
+        @media (max-width: 690px){
+            left: 0 !important;
+        }
     }
 }
 
@@ -96,6 +99,9 @@
     .step {
         &:first-child {
             border-right: 1.5px solid var(--color-white);
+            @media (max-width: 690px){ 
+                border-right: unset;
+            }
         }
         .step-id {
             color: var(--color-white);
@@ -103,6 +109,9 @@
                 size: 25px;
                 family: var(--font-family-primary);
                 weight: 700;
+            }
+            @media (max-width: 690px){ 
+                margin-left: 0px !important;
             }
         }
         span:not(.step-id) {
@@ -125,15 +134,36 @@
                 background-color: transparent;
             }
         }
+        .block{
+            display: block;
+        }
+        @media (max-width: 690px){ 
+            width: 100%;
+            border-bottom: 1.5px solid var(--color-white);
+            padding: 7px 0px;
+            .block {
+                display: inline;
+            }
+        }
+    }
+    @media (max-width: 690px){ 
+        flex-wrap: wrap;
+
+    }
+}
+.component-counter--copy{
+    font: {
+        size: 8px;
+        family: var(--font-family-primary);
+        weight: 100;
     }
 }
 
-.component-top-ten-posters {
-    width: 100%;
-    max-width: 1240px;
-    margin: 0px auto;
-    .component-top-ten-posters--header {
-        .component-top-ten-posters--header-title {
+.component-top-ten-posts {
+    background-color: var(--color-white);
+    
+    .component-top-ten-posts--header {
+        .component-top-ten-posts--header-title {
             color: var(--color-fourth);
             font: {
                 size: 23px;
@@ -144,8 +174,20 @@
     }
 }
 
-.component-top-ten-posters--wrapper-posts {
-    border: 1px solid red;
+    // .component-top-ten-posters--wrapper-posts {
+    //     border: 1px solid red;
+    // }
+
+.component-posts--arrow-navigation{
+    .slick-arrow {
+        position: unset !important;
+    }
+    .slick-prev:before{
+        content: image('icons/prev-arrow.svg');
+    }
+    .slick-next:before{
+        content: image('icons/next-arrow.svg');
+    }
 }
 
 .component-post--card {
@@ -181,6 +223,23 @@
                     size: 12px;
                     weight: 100;
                 }
+            }
+            .views::before,
+            .time-ago::before{
+                content: "";
+                position: relative;
+                width: 15px;
+                height: 10px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-right: 3px;
+            }
+            .views::before {
+                background-image: image('icons/views-icon.svg');
+            }
+            .time-ago::before {
+                background-image: image('icons/date-icon.svg');
             }
             border-bottom: 1px solid var(--color-white);
         }
@@ -224,3 +283,54 @@
         }
     }
 }
+
+.component-more-posts--wrapper,
+.component-top-ten-posts--wrapper {
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0px auto;
+}
+
+.component-more-posts {
+    background-color: var(--color-white);;
+    .component-more-posts--header {
+        .component-more-posts--header-title {
+            line-height: 1;
+            color: var(--color-fourth);
+            font: {
+                size: 23px;
+                family: var(--font-family-primary);
+                weight: 500;
+            }
+        }
+    }
+}
+
+.component-loadmore{
+    button.load-more-posts{
+        width: 100%;
+        max-width: 220px;
+        color: #262424;
+        line-height: 1;
+        font: {
+            size: 23px;
+            family: var(--font-family-fourth);
+        }
+        span.arrow-more{
+            width: 20px;
+            height: 20px;
+            background-image: image('icons/arrow-more.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+// .component-more-posts--postsList,
+// .component-more-posts--header{
+//     width: 100%;
+//     max-width: 1280px;
+//     margin: 0px auto;
+// }
