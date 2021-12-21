@@ -142,82 +142,85 @@
             }
         }
     }
-    .component-top-ten-posters--wrapper-posts {
-        .component-top-ten-posters--post {
+}
+
+.component-top-ten-posters--wrapper-posts {
+    border: 1px solid red;
+}
+
+.component-post--card {
+    width: 100%;
+    max-width: fit-content;
+    position: relative;
+    .post-media {
+        position: relative;
+        .post-play {
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+    .post-details {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        background: rgb(62, 29, 121);
+        background: linear-gradient(180deg, rgba(62, 29, 121, 0.14607849975927867) 16%, rgba(62, 29, 121, 1) 100%);
+        .post-details--user {
+            font: {
+                family: var(--font-family-primary);
+                size: 15px;
+                weight: 100;
+            }
+        }
+        .post-details--statistics {
+            .views,
+            .time-ago {
+                font: {
+                    family: var(--font-family-fourth);
+                    size: 12px;
+                    weight: 100;
+                }
+            }
+            border-bottom: 1px solid var(--color-white);
+        }
+        .post-description {
+            .post-description--title {
+                font: {
+                    family: var(--font-family-primary);
+                    size: 16px;
+                    weight: 400;
+                }
+            }
+            .post-description--hashtag {
+                font: {
+                    family: var(--font-family-primary);
+                    size: 12px;
+                    weight: 100;
+                }
+            }
+        }
+    }
+    .post-let-vote {
+        position: absolute;
+        margin-top: 15px;
+        width: 100%;
+        a {
             width: 100%;
-            max-width: fit-content;
-            position: relative;
-            .post-media {
-                position: relative;
-                .post-play {
-                    position: absolute;
-                    cursor: pointer;
-                }
+            display: block;
+            text-transform: uppercase;
+            font: {
+                size: 16px;
+                family: var(--font-family-primary);
+                weight: 500;
             }
-            .post-details {
-                position: absolute;
-                width: 100%;
-                left: 0;
-                bottom: 0;
-                background: rgb(62, 29, 121);
-                background: linear-gradient(180deg, rgba(62, 29, 121, 0.14607849975927867) 16%, rgba(62, 29, 121, 1) 100%);
-                .post-details--user {
-                    font: {
-                        family: var(--font-family-primary);
-                        size: 15px;
-                        weight: 100;
-                    }
-                }
-                .post-details--statistics {
-                    .views,
-                    .time-ago {
-                        font: {
-                            family: var(--font-family-fourth);
-                            size: 12px;
-                            weight: 100;
-                        }
-                    }
-                    border-bottom: 1px solid var(--color-white);
-                }
-                .post-description {
-                    .post-description--title {
-                        font: {
-                            family: var(--font-family-primary);
-                            size: 16px;
-                            weight: 400;
-                        }
-                    }
-                    .post-description--hashtag {
-                        font: {
-                            family: var(--font-family-primary);
-                            size: 12px;
-                            weight: 100;
-                        }
-                    }
-                }
-            }
-            .post-let-vote {
-                position: absolute;
-                margin-top: 15px;
-                width: 100%;
-                a {
-                    width: 100%;
-                    display: block;
-                    text-transform: uppercase;
-                    font: {
-                        size: 16px;
-                        family: var(--font-family-primary);
-                        weight: 500;
-                    }
-                }
-                span {
-                    width: 100%;
-                    display: block;
-                    color: var(--color-fourth);
-                    font-weight: 700;
-                    font-size: 16px;
-                }
-            }
+        }
+        span {
+            width: 100%;
+            display: block;
+            color: var(--color-fourth);
+            font-weight: 700;
+            font-size: 16px;
         }
     }
 }
