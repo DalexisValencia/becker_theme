@@ -36,7 +36,7 @@
                 weight: 700;
             }
         }
-        @media (max-width: 690px){
+        @media (max-width: 690px) {
             left: 0 !important;
         }
     }
@@ -65,27 +65,6 @@
                 weight: 700;
             }
         }
-        .component-counter--wrapper {
-            .component-counter--item {
-                color: var(--color-white);
-                .component-counter--label {
-                    display: block;
-                    text-transform: uppercase;
-                    font: {
-                        family: var(--font-family-digital);
-                        size: 10px;
-                        weight: 400;
-                    }
-                }
-                .component-counter--counting {
-                    font: {
-                        family: var(--font-family-digital);
-                        size: 41px;
-                        weight: 400;
-                    }
-                }
-            }
-        }
         .component-counter--copy {
             color: var(--color-white);
             font: {
@@ -96,11 +75,39 @@
     }
 }
 
+
+/*COUNTER COMPONENT*/
+
+.component-counter--wrapper {
+    .component-counter--item {
+        color: var(--color-white);
+        .component-counter--label {
+            display: block;
+            text-transform: uppercase;
+            font: {
+                family: var(--font-family-digital);
+                size: 10px;
+                weight: 400;
+            }
+        }
+        .component-counter--counting {
+            font: {
+                family: var(--font-family-digital);
+                size: 41px;
+                weight: 400;
+            }
+        }
+    }
+}
+
+
+/*FIN*/
+
 .component-counter--steps {
     .step {
         &:first-child {
             border-right: 1.5px solid var(--color-white);
-            @media (max-width: 690px){ 
+            @media (max-width: 690px) {
                 border-right: unset;
             }
         }
@@ -111,7 +118,7 @@
                 family: var(--font-family-primary);
                 weight: 700;
             }
-            @media (max-width: 690px){ 
+            @media (max-width: 690px) {
                 margin-left: 0px !important;
             }
         }
@@ -135,10 +142,10 @@
                 background-color: transparent;
             }
         }
-        .block{
+        .block {
             display: block;
         }
-        @media (max-width: 690px){ 
+        @media (max-width: 690px) {
             width: 100%;
             border-bottom: 1.5px solid var(--color-white);
             padding: 7px 0px;
@@ -147,12 +154,12 @@
             }
         }
     }
-    @media (max-width: 690px){ 
+    @media (max-width: 690px) {
         flex-wrap: wrap;
-
     }
 }
-.component-counter--copy{
+
+.component-counter--copy {
     font: {
         size: 8px;
         family: var(--font-family-primary);
@@ -162,7 +169,6 @@
 
 .component-top-ten-posts {
     background-color: var(--color-white);
-    
     .component-top-ten-posts--header {
         .component-top-ten-posts--header-title {
             color: var(--color-fourth);
@@ -175,18 +181,17 @@
     }
 }
 
-    // .component-top-ten-posters--wrapper-posts {
-    //     border: 1px solid red;
-    // }
-
-.component-posts--arrow-navigation{
+// .component-top-ten-posters--wrapper-posts {
+//     border: 1px solid red;
+// }
+.component-posts--arrow-navigation {
     .slick-arrow {
         position: unset !important;
     }
-    .slick-prev:before{
+    .slick-prev:before {
         content: image('icons/prev-arrow.svg');
     }
-    .slick-next:before{
+    .slick-next:before {
         content: image('icons/next-arrow.svg');
     }
 }
@@ -226,7 +231,7 @@
                 }
             }
             .views::before,
-            .time-ago::before{
+            .time-ago::before {
                 content: "";
                 position: relative;
                 width: 15px;
@@ -294,7 +299,8 @@
 }
 
 .component-more-posts {
-    background-color: var(--color-white);;
+    background-color: var(--color-white);
+    ;
     .component-more-posts--header {
         .component-more-posts--header-title {
             line-height: 1;
@@ -308,8 +314,8 @@
     }
 }
 
-.component-loadmore{
-    button.load-more-posts{
+.component-loadmore {
+    button.load-more-posts {
         width: 100%;
         max-width: 220px;
         color: #262424;
@@ -318,7 +324,7 @@
             size: 23px;
             family: var(--font-family-fourth);
         }
-        span.arrow-more{
+        span.arrow-more {
             width: 20px;
             height: 20px;
             background-image: image('icons/arrow-more.svg');

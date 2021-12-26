@@ -1,0 +1,132 @@
+.modal-vote {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+    &.active {
+        display: block;
+    }
+    &:not(.active) {
+        display: none;
+    }
+    .modal-content {
+        position: relative;
+        background-color: var(--color-secondary);
+        margin: 15% auto;
+        width: 100%;
+        max-width: 550px;
+        .close-modal {
+            position: absolute;
+            width: 100px;
+            top: 10px;
+            right: 10px;
+            font: {
+                family: var(--font-family-primary);
+                size: 10px;
+                weight: 700;
+            }
+            &:hover {
+                background-color: var(--color-secondary);
+            }
+        }
+        .modal-title {
+            line-height: 1;
+            font: {
+                family: var(--font-family-primary);
+                size: 28px;
+                weight: 700;
+            }
+        }
+        .modal-description {
+            li {
+                font: {
+                    family: var(--font-family-primary);
+                    size: 14px;
+                    weight: 400;
+                }
+                list-style: image-set;
+                color: var(--color-white);
+            }
+        }
+        .modal-actions {
+            a.btn-custom--fase-3 {
+                width: 100%;
+                font: {
+                    family: var(--font-family-primary);
+                    size: 16px;
+                    weight: 400;
+                }
+            }
+        }
+    }
+}
+
+// .modal-vote {
+//     position: fixed;
+//     z-index: 100;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     overflow: auto;
+//     background-color: rgb(0, 0, 0);
+//     background-color: rgba(0, 0, 0, 0.6);
+//     &.active {
+//         display: block;
+//     }
+//     &:not(.active) {
+//         display: none;
+//     }
+//     .modal-content {
+//         background-color: var(--color-fourth);
+//         margin: 15% auto;
+//         width: 100%;
+//         max-width: 660px;
+//         .modal-title {
+//             line-height: 1;
+//             font: {
+//                 family: var(--font-family-primary);
+//                 size: 38px;
+//                 weight: 700;
+//             }
+//         }
+//         .modal-description {
+//             font: {
+//                 family: var(--font-family-primary);
+//                 size: 19px;
+//                 weight: 400;
+//             }
+//         }
+//         .modal-actions {
+//             a.btn-custom--fase-3 {
+//                 width: 45%;
+//                 max-width: 230px;
+//                 font-size: 16px;
+//                 &.btn-cancel {
+//                     background-color: var(--color-primary);
+//                     &:hover {
+//                         background-color: var(--color-primary-700);
+//                     }
+//                 }
+//                 &.btn-make-vote {
+//                     background-color: var(--color-secondary) !important;
+//                     &:hover {
+//                         background-color: var(--color-secondary-700) !important;
+//                     }
+//                 }
+//                 @media (max-width: 690px) {
+//                     width: 100%;
+//                 }
+//             }
+//             @media (max-width: 690px) {
+//                 flex-wrap: wrap;
+//                 flex-direction: column;
+//             }
+//         }
+//     }
+// }

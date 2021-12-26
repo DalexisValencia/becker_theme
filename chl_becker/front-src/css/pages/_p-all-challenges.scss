@@ -1,0 +1,171 @@
+.component-header-all-challenges {
+    background-color: var(--color-fourth);
+    margin-top: 69px;
+    @media (max-width: 690px) {
+        width: 100%;
+    }
+}
+
+.component-header-all-challenges--picture {
+    width: 100%;
+    picture {
+        &,
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.component-header-all-challenges--header {
+    height: min-content;
+    margin-top: auto;
+    min-width: 40%;
+    .component-header-all-challenges--header--title {
+        line-height: 1;
+        font: {
+            family: var(--font-family-primary);
+            size: 90px;
+            weight: 500;
+        }
+        @media (max-width: 1120px) {
+            font-size: 50px;
+        }
+    }
+    .component-header-all-challenges--header--description {
+        line-height: 1;
+        font: {
+            family: var(--font-family-primary);
+            size: 16px;
+            weight: 500;
+        }
+        @media (max-width: 1120px) {
+            font-size: 12px;
+        }
+    }
+    .see-challenges {
+        font: {
+            family: var(--font-family-primary);
+            size: 16px;
+            weight: 500;
+        }
+        &:hover {
+            background-color: var(--color-secondary-700);
+        }
+        @media (max-width: 1120px) {
+            font-size: 12px;
+        }
+    }
+    @media (max-width: 1120px) {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        min-width: unset;
+        width: 30%;
+    }
+    @media (max-width: 840px) {
+        display: none;
+    }
+}
+
+.component-header-all-challenges--post-related {
+    .component-post--card {
+        max-width: 100%;
+        margin: 0px !important;
+        .post-let-vote {
+            display: none;
+        }
+        .post-media {
+            width: 100%;
+            .post-picture {
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media (max-width: 690px) {
+        width: 100%;
+    }
+}
+
+.component-header-all-challenges--body {
+    @media (max-width: 690px) {
+        width: 100%;
+    }
+}
+
+.component-unlocked-challenge {
+    border: 1px dashed red;
+    background-color: var(--color-white);
+}
+
+.component-unlocked-challenge--list {
+    .component-unlocked-card {
+        max-width: 375px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .component-unlocked-card--label {
+            border-bottom: 1px solid var(--color-white);
+            word-break: break-all;
+            font: {
+                family: var(--font-family-primary);
+                size: 16px;
+                weight: 500;
+            }
+            @media (max-width: 690px) {
+                font-size: 16px;
+            }
+        }
+        .component-unlocked-card--body {
+            .component-unlocked-card--body-identifier {
+                font: {
+                    family: var(--font-family-primary);
+                    size: 18px;
+                    weight: 500;
+                }
+                @media (max-width: 690px) {
+                    font-size: 14px;
+                }
+            }
+            .component-unlocked-card--body-title {
+                line-height: 1.1;
+                word-break: break-all;
+                font: {
+                    family: var(--font-family-primary);
+                    size: 44px;
+                    weight: bold;
+                }
+                @media (max-width: 690px) {
+                    font-size: 33px;
+                }
+            }
+            .component-unlocked-card--body-description {
+                font: {
+                    family: var(--font-family-primary);
+                    size: 16px;
+                    weight: 500;
+                }
+                @media (max-width: 690px) {
+                    font-size: 12px;
+                }
+            }
+        }
+        .component-unlocked-card--actions {
+            text-align: right;
+            .see-challenges {
+                width: 100%;
+                max-width: 200px;
+                margin-left: auto;
+                font: {
+                    family: var(--font-family-primary);
+                    size: 18px;
+                    weight: 500;
+                }
+                @media (max-width: 690px) {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

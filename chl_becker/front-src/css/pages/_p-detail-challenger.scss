@@ -1,0 +1,144 @@
+.component-header-all-challenges--body {
+    @media (max-width: 690px) {
+        flex-wrap: wrap;
+        background-image: image('allChallenges/detail-challenger-mobile.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 100px;
+        background-position-x: center;
+    }
+}
+
+.component-challenger-detail--post {
+    width: 100%;
+    max-width: 300px;
+    height: min-content;
+    margin: auto;
+    .component-challenger-detail--post-picture {
+        &,
+        img {
+            width: 100%;
+        }
+    }
+    .component-challenger-detail--post-label {
+        width: 100%;
+        font: {
+            family: var(--font-family-primary);
+            size: 9px;
+            weight: 400;
+        }
+    }
+    .post-play {
+        position: absolute;
+        margin-top: -60px;
+        @media (max-width: 690px) {
+            margin-top: 0px;
+        }
+    }
+}
+
+.component-challenger-detail--header {
+    margin-top: auto;
+    .component-challenger-detail--indetify {
+        font: {
+            family: var(--font-family-primary);
+            size: 16px;
+            weight: 400;
+        }
+    }
+    .component-challenger-detail--title {
+        line-height: 1.1;
+        font: {
+            family: var(--font-family-primary);
+            size: 50px;
+            weight: 400;
+        }
+        .text-block {
+            display: block;
+        }
+        @media (max-width: 690px) {
+            font-size: 20px;
+        }
+    }
+    .component-challenger-detail--details {
+        font: {
+            family: var(--font-family-primary);
+            size: 14px;
+            weight: 100;
+        }
+        @media (max-width: 690px) {
+            font-size: 16px;
+        }
+    }
+}
+
+.component-challenger-detail--counter {
+    width: 100%;
+    max-width: min-content;
+    border: 1px solid var(--color-white);
+    .component-challenger-detail--counter-title {
+        width: 100px;
+        line-height: 1;
+        font: {
+            family: var(--font-family-primary);
+            size: 16px;
+            weight: 700;
+        }
+        .text-block {
+            display: block;
+            @media (max-width: 690px) {
+                font-size: 32px;
+            }
+        }
+        @media (max-width: 690px) {
+            width: 40%;
+        }
+    }
+    @media (max-width: 690px) {
+        max-width: 100%;
+    }
+}
+
+.component-challenger-detail--form {
+    max-width: 395px;
+    input {
+        text-transform: uppercase;
+        padding: 10px 5px;
+        font: {
+            family: var(--font-family-primary);
+            size: 13px;
+            weight: 100;
+        }
+        border: 1px solid transparent;
+        border-bottom: 1px solid var(--color-white);
+        outline: none;
+        &::placeholder {
+            font-size: 14px;
+            font-family: var(--font-family-third);
+            color: white;
+        }
+        @media (max-width: 690px) {
+            text-align: center;
+            border: 1px solid var(--color-white);
+        }
+    }
+    .component-challenger-detail--form-copy {
+        font: {
+            family: var(--font-family-primary);
+            size: 9px;
+            weight: 100;
+        }
+    }
+}
+
+.component-challenger-detail--actions {
+    max-width: 395px;
+    a.btn-custom--fase-3 {
+        width: 45%;
+        font: {
+            family: var(--font-family-primary);
+            size: 14px;
+            weight: 100;
+        }
+    }
+}

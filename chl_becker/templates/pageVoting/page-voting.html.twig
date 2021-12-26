@@ -120,12 +120,12 @@
 
     <div class="component-more-posts--postsList mt-4">
       {% for i in 0..6 %}
-        {% include '@chl_becker/pageVoting/post-card.html.twig' %}
+        {% include '@chl_becker/pageVoting/post-card.html.twig' with {'picture': '/front-src/img/posts/post.png' } %}
       {% endfor %}
     </div>
 
     <div class="component-loadmore px-3 pb-4 flex justify-center item-center">
-      <button data-aos-offset="-300" data-aos-duration="1500" data-aos="fade-right" class="flex justify-center items-center load-more-posts p-3 mt-2 border-0 float-left focus:outline-none outline-none text-center">
+      <button data-aos-offset="-300" data-aos-duration="1500" data-aos="fade-right" class="flex justify-center items-center load-more-posts p-3 mt-2 border-0 focus:outline-none outline-none text-center">
         Cargar más <span class="arrow-more mx-2"></span>
       </button>
     </div>

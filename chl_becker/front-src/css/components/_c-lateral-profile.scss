@@ -1,0 +1,88 @@
+.component-lateral-profile {
+    // height: 100%;
+    width: 100%;
+    max-width: 270px;
+    background-color: var(--color-primary);
+    @media (max-width: 690px) {
+        width: 100%;
+        max-width: 100%;
+        background-color: var(--color-fourth);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.component-lateral-profile--avatar {
+    text-align: left;
+    picture {
+        display: inline-block;
+        img {
+            width: 99px;
+            height: 99px;
+            min-width: 99px;
+            min-height: 99px;
+            @media (max-width: 690px) {
+                width: 66px;
+                height: 66px;
+                min-width: 66px;
+                min-height: 66px;
+            }
+        }
+    }
+}
+
+.component-lateral-profile--details {
+    .component-lateral-profile--name {
+        font: {
+            family: var(--font-family-primary);
+            size: 16px;
+            weight: 700;
+        }
+        @media (max-width: 690px) {
+            border-bottom: 1px solid transparent;
+            font-size: 12px;
+        }
+    }
+    .component-lateral-profile--description {
+        border-bottom: 1px solid var(--color-white);
+        font: {
+            family: var(--font-family-primary);
+            size: 11px;
+            weight: 400;
+        }
+        @media (max-width: 690px) {
+            border-bottom: 1px solid transparent;
+            font-size: 9px;
+        }
+    }
+    @media (max-width: 690px) {
+        margin: 0px 10px;
+    }
+}
+
+.component-lateral-profile--actions {
+    .game-rules {
+        background-color: var(--color-fourth);
+        width: 100%;
+        font: {
+            family: var(--font-family-primary);
+            size: 11px;
+            weight: 400;
+        }
+        .info-icon {
+            margin-top: 5px;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-image: image('icons/info-icon.svg');
+        }
+        @media (max-width: 690px) {
+            background-color: transparent;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}

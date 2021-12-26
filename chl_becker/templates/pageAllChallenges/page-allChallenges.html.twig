@@ -1,0 +1,197 @@
+{# COMPONENTE HEADER #}
+<section class="md:flex-nowrap flex-wrap flex justify-center items-center component-header-all-challenges">
+	<div
+		class="flex justify-between md:pl-5 component-header-all-challenges--body">
+		{# PROFILE LATERAL COMPONENT #}
+		{% include '@chl_becker/components/profile-lateral-header.html.twig' %}
+		{# PROFILE LATERAL COMPONENT #}
+		<header class="component-header-all-challenges--header hide-mobile px-7 mx-5 mb-7">
+			<h2 class="text-white component-header-all-challenges--header--title">
+				Retos
+			</h2>
+
+			<p class="text-white component-header-all-challenges--header--description py-3">
+				¿Tienes miedito o qué? Regístrate y pon a prueba tu creatividad cumpliendo los retos para ser uno de los nuevos embajadores de Becker.
+			</p>
+
+			<a class="justify-between see-challenges bg-secondary btn-custom--fase-3 flex items-center p-3 mb-2 border-0 focus:outline-none outline-none text-white">
+				Ver retos
+				<span class="ml-1">
+					<svg width="18" height="18" viewbox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g filter="url(#filter0_d)">
+							<path d="M19 0V7.5H66.2125L4 69.7125L9.2875 75L71.5 12.7875V60H79V0H19Z" fill="white"/>
+						</g>
+						<defs>
+							<filter id="filter0_d" x="0" y="0" width="83" height="83" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+								<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+								<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+								<feOffset dy="4"/>
+								<feGaussianBlur stddeviation="2"/>
+								<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+								<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+								<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+							</filter>
+						</defs>
+					</svg>
+				</span>
+			</a>
+		</header>
+
+		<section class="component-header-all-challenges--picture hide-mobile">
+			<picture>
+				<source media="(min-width:690px)" srcset="/{{ directory }}/front-src/img/allChallenges/banner.png">
+				<img src="/{{ directory }}/front-src/img/allChallenges/banner.png" alt="">
+			</picture>
+		</section>
+	</div>
+	<div class="component-header-all-challenges--post-related hide-desktop lg:pr-10">
+		{% include '@chl_becker/pageVoting/post-card.html.twig' with {'picture': '/front-src/img/posts/post-profile.png' } %}
+	</div>
+</section>
+{# FIN #}
+
+{# COMPONENTE UNLOCKED CHALLENGES #}
+<section class="component-unlocked-challenge p-3">
+	<div class="component-max-width component-unlocked-challenge--list px-0 sm:px-5 my-3">
+		<div class="component-unlocked-card mb-2 mt-1 mx-1 sm:mx-2" style="background-image:url(/{{ directory }}/front-src/img/allChallenges/unlocked-challenge-1.png)">
+			<header class="component-unlocked-card--label text-white text-center py-1">Reto desbloqueado</header>
+			<div class="component-unlocked-card--body p-2 sm:p-4">
+				<div class="component-unlocked-card--body-identifier text-white p-1 sm:p-2">Reto #1</div>
+				<h2 class="component-unlocked-card--body-title text-white py-2">
+					Sobrenombres
+				</h2>
+				<p class="component-unlocked-card--body-description text-white py-2">
+					Cuenta la historia del sobrenombre más divertido que hayas escuchado.
+				</p>
+			</div>
+			<footer class="component-unlocked-card--actions px-1 sm:px-4">
+				<a class="flex items-center justify-between see-challenges bg-primary btn-custom--fase-3 p-3 mb-2 border-0 focus:outline-none outline-none text-white">
+					Ver reto
+					<span class="ml-1">
+						<svg width="18" height="18" viewbox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_d)">
+								<path d="M19 0V7.5H66.2125L4 69.7125L9.2875 75L71.5 12.7875V60H79V0H19Z" fill="white"/>
+							</g>
+							<defs>
+								<filter id="filter0_d" x="0" y="0" width="83" height="83" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+									<feOffset dy="4"/>
+									<feGaussianBlur stddeviation="2"/>
+									<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+									<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+								</filter>
+							</defs>
+						</svg>
+					</span>
+				</a>
+			</footer>
+		</div>
+
+		<div class="component-unlocked-card mb-2 mt-1 mx-1 sm:mx-2" style="background-image:url(/{{ directory }}/front-src/img/allChallenges/unlocked-challenge-2.png)">
+			<header class="component-unlocked-card--label text-white text-center py-1">Reto desbloqueado</header>
+			<div class="component-unlocked-card--body p-2 sm:p-4">
+				<div class="component-unlocked-card--body-identifier text-white p-1 sm:p-2">Reto #2</div>
+				<h2 class="component-unlocked-card--body-title text-white py-2">
+					Tómatela como quieras
+				</h2>
+				<p class="component-unlocked-card--body-description text-white py-2">
+					Muestra cómo te tomas tú una Becker. ¡Sin turbochelas eso sí! 
+				</p>
+			</div>
+			<footer class="component-unlocked-card--actions px-1 sm:px-4">
+				<a class="flex items-center justify-between see-challenges bg-primary btn-custom--fase-3 p-3 mb-2 border-0 focus:outline-none outline-none text-white">
+					Ver reto
+					<span class="ml-1">
+						<svg width="18" height="18" viewbox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_d)">
+								<path d="M19 0V7.5H66.2125L4 69.7125L9.2875 75L71.5 12.7875V60H79V0H19Z" fill="white"/>
+							</g>
+							<defs>
+								<filter id="filter0_d" x="0" y="0" width="83" height="83" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+									<feOffset dy="4"/>
+									<feGaussianBlur stddeviation="2"/>
+									<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+									<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+								</filter>
+							</defs>
+						</svg>
+					</span>
+				</a>
+			</footer>
+		</div>
+
+		<div class="component-unlocked-card mb-2 mt-1 mx-1 sm:mx-2" style="background-image:url(/{{ directory }}/front-src/img/allChallenges/unlocked-challenge-3.png)">
+			<header class="component-unlocked-card--label text-white text-center py-1">Reto desbloqueado</header>
+			<div class="component-unlocked-card--body p-2 sm:p-4">
+				<div class="component-unlocked-card--body-identifier text-white p-1 sm:p-2">Reto #3</div>
+				<h2 class="component-unlocked-card--body-title text-white py-2">
+					Pitch
+					creativo
+				</h2>
+				<p class="component-unlocked-card--body-description text-white py-2">
+					Cuéntanos una i  dea diferente para el próximo comer cial de Becker.
+				</p>
+			</div>
+			<footer class="component-unlocked-card--actions px-1 sm:px-4">
+				<a class="flex items-center justify-between see-challenges bg-secondary btn-custom--fase-3 p-3 mb-2 border-0 focus:outline-none outline-none text-white">
+					Ver reto
+					<span class="ml-1">
+						<svg width="18" height="18" viewbox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_d)">
+								<path d="M19 0V7.5H66.2125L4 69.7125L9.2875 75L71.5 12.7875V60H79V0H19Z" fill="white"/>
+							</g>
+							<defs>
+								<filter id="filter0_d" x="0" y="0" width="83" height="83" filterunits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+									<feOffset dy="4"/>
+									<feGaussianBlur stddeviation="2"/>
+									<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+									<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+								</filter>
+							</defs>
+						</svg>
+					</span>
+				</a>
+			</footer>
+		</div>
+	</div>
+	<div class="component-loadmore px-3 pb-4 flex justify-center item-center">
+		<button data-aos-offset="-300" data-aos-duration="1500" data-aos="fade-right" class="flex justify-center items-center load-more-posts p-3 mt-2 border-0 focus:outline-none outline-none text-center" id="load-more-home-posts">
+			Cargar más
+			<span class="arrow-more mx-2"></span>
+		</button>
+	</div>
+</section>
+{# FIN #}
+
+{# COMPONENTE GRID POSTS #}
+<section class="component-posts p-7 posts-home">
+	<div class="component-max-width py-10 gray-background">
+		<header class="component-slide-navigation flex justify-between items-center px-5">
+			<h2 class="component-slide-navigation--title">Mis videos</h2>
+			<div class="component-slide-navigation--arrows flex justify-center items-center"></div>
+		</header>
+
+		<section class="component--posts-grid my-4 px-10 grid gap-2">
+			{% for i in 0..6 %}
+				{% include '@chl_becker/pageVoting/post-card.html.twig' with {'picture': '/front-src/img/posts/post-profile.png' } %}
+			{% endfor %}
+		</section>
+
+		<div class="component-loadmore px-3 pb-4 flex justify-center item-center">
+			<button data-aos-offset="-300" data-aos-duration="1500" data-aos="fade-right" class="flex justify-center items-center load-more-posts p-3 mt-2 border-0 focus:outline-none outline-none text-center" id="load-more-home-posts">
+				Cargar más
+				<span class="arrow-more mx-2"></span>
+			</button>
+		</div>
+
+	</div>
+</section>
+{# FIN #}

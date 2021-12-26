@@ -1,0 +1,78 @@
+.component-thanks-challenger-register {
+    margin-top: 74px;
+    .lateral-copy-thanks {
+        width: 75%;
+        background-image: image('thank-register/thank-tesellation.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        @media (max-width: 690px) {
+            width: 100%;
+            padding-top: 90px;
+            padding-bottom: 90px;
+        }
+    }
+    @media (max-width: 690px) {
+        flex-wrap: wrap;
+    }
+    .lateral-copy-thanks-picture--wrapper {
+        @media (max-width: 690px) {
+            width: 100%;
+        }
+    }
+}
+
+.lateral-copy-thanks,
+.lateral-copy-thanks-picture {
+    @media (max-width: 690px) {
+        width: 100%;
+    }
+}
+
+.lateral-copy-thanks-picture {
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+.lateral-copy-thanks--header {
+    width: 100%;
+    max-width: 450px;
+    .lateral-copy-thanks--header-title {
+        line-height: 1.1;
+        font: {
+            family: var(--font-family-primary);
+            size: 46px;
+            weight: 700;
+        }
+        @media (max-width: 900px) {
+            font-size: 36px;
+        }
+        @media (max-width: 690px) {
+            font-size: 46px;
+        }
+        .text-break {
+            display: block;
+            @media (max-width: 690px) {
+                display: inline-block;
+            }
+        }
+    }
+    .lateral-copy-thanks--header-description {
+        line-height: 1.1;
+        font: {
+            family: var(--font-family-primary);
+            size: 17px;
+            weight: normal;
+        }
+    }
+    a.btn-return {
+        line-height: 1.1;
+        max-width: 226px;
+        font: {
+            family: var(--font-family-primary);
+            size: 16px;
+            weight: 600;
+        }
+    }
+}
